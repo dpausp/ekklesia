@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
@@ -13,7 +13,9 @@ setup(
     author_email='ekklesia@heterarchy.net',
     url='',
     version='0.1',
-    packages=['ekklesia'],
+    py_modules=["manage"],
+    package_dir={"": "./identity"},
+    packages=find_packages(where="./identity"),
     include_package_data=True,
     license='AGPLv3',
     description='A framework for direct democracy in large organisations',
@@ -38,6 +40,8 @@ setup(
             'members = ekklesia.backends.members:main_func',
             'invitations = ekklesia.backends.invitations:main_func',
             'joint = ekklesia.backends.joint:main_func',
+            'ekklesia-manage.py = manage:main_func',
         ],
     }
+
 )
