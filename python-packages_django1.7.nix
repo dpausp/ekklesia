@@ -20,13 +20,33 @@
     };
   };
   Pillow = super.buildPythonPackage {
-    name = "Pillow-3.0.0";
+    name = "Pillow-3.1.0";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/P/Pillow/Pillow-3.0.0.tar.gz";
-      md5 = "fc8ac44e93da09678eac7e30c9b7377d";
+      url = "https://pypi.python.org/packages/source/P/Pillow/Pillow-3.1.0.tar.gz";
+      md5 = "506b65d4353cd76b480decb961fa753a";
+    };
+  };
+  PyYAML = super.buildPythonPackage {
+    name = "PyYAML-3.11";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.11.tar.gz";
+      md5 = "f50e08ef0fe55178479d3a618efe21db";
+    };
+  };
+  WebOb = super.buildPythonPackage {
+    name = "WebOb-1.5.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/W/WebOb/WebOb-1.5.1.tar.gz";
+      md5 = "b4c121048b154e33630ce1bf09a49b41";
     };
   };
   alembic = super.buildPythonPackage {
@@ -59,6 +79,26 @@
       md5 = "2ea28d6ec311aeeebaf993cb3008b27c";
     };
   };
+  apipkg = super.buildPythonPackage {
+    name = "apipkg-1.4";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/a/apipkg/apipkg-1.4.tar.gz";
+      md5 = "17e5668601a2322aff41548cb957e7c8";
+    };
+  };
+  beautifulsoup4 = super.buildPythonPackage {
+    name = "beautifulsoup4-4.4.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.4.1.tar.gz";
+      md5 = "8fbd9a7cac0704645fa20d1419036815";
+    };
+  };
   billiard = super.buildPythonPackage {
     name = "billiard-3.3.0.22";
     buildInputs = with self; [];
@@ -80,13 +120,13 @@
     };
   };
   cffi = super.buildPythonPackage {
-    name = "cffi-1.4.1";
+    name = "cffi-1.4.2";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [pycparser];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/c/cffi/cffi-1.4.1.tar.gz";
-      md5 = "73c2047f598ac7d8b7a5cd8e6d835c42";
+      url = "https://pypi.python.org/packages/source/c/cffi/cffi-1.4.2.tar.gz";
+      md5 = "81357fe5042d00650b85b728cc181df2";
     };
   };
   configobj = super.buildPythonPackage {
@@ -99,14 +139,24 @@
       md5 = "e472a3a1c2a67bb0ec9b5d54c13a47d6";
     };
   };
+  coverage = super.buildPythonPackage {
+    name = "coverage-4.0.3";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/c/coverage/coverage-4.0.3.tar.gz";
+      md5 = "c7d3db1882484022c81bf619be7b6365";
+    };
+  };
   cryptography = super.buildPythonPackage {
-    name = "cryptography-1.1.2";
+    name = "cryptography-1.2";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [idna pyasn1 six setuptools enum34 ipaddress cffi];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/c/cryptography/cryptography-1.1.2.tar.gz";
-      md5 = "15eeba9e31f852bac21155baa3dfbc61";
+      url = "https://pypi.python.org/packages/source/c/cryptography/cryptography-1.2.tar.gz";
+      md5 = "e7092564f25b92d4554f37bca7ae12d8";
     };
   };
   django = super.buildPythonPackage {
@@ -120,13 +170,13 @@
     };
   };
   django-admin-bootstrapped = super.buildPythonPackage {
-    name = "django-admin-bootstrapped-2.5.7";
+    name = "django-admin-bootstrapped-2.4.0";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [setuptools django];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/d/django-admin-bootstrapped/django-admin-bootstrapped-2.5.7.tar.gz";
-      md5 = "50025cc096f4b5c49d3eb4009682614b";
+      url = "https://pypi.python.org/packages/source/d/django-admin-bootstrapped/django-admin-bootstrapped-2.4.0.tar.gz";
+      md5 = "d7fa71b2ca19fbaa0720ec9013d0b09a";
     };
   };
   django-braces = super.buildPythonPackage {
@@ -140,13 +190,13 @@
     };
   };
   django-configurations = super.buildPythonPackage {
-    name = "django-configurations-0.8";
+    name = "django-configurations-1.0";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/d/django-configurations/django-configurations-0.8.tar.gz";
-      md5 = "3ca3c5a0d78307ff304ecce3234c2822";
+      url = "https://pypi.python.org/packages/source/d/django-configurations/django-configurations-1.0.tar.gz";
+      md5 = "c2cf12442a8e36e6846a9e49255287bb";
     };
   };
   django-cors-headers = super.buildPythonPackage {
@@ -179,6 +229,16 @@
       md5 = "4e5e0f6a9ddef530417891ee4c495562";
     };
   };
+  django-debug-toolbar = super.buildPythonPackage {
+    name = "django-debug-toolbar-1.4";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [django sqlparse];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/d/django-debug-toolbar/django-debug-toolbar-1.4.tar.gz";
+      md5 = "8c9402e11032a76e316fb8e6efe01196";
+    };
+  };
   django-endless-pagination = super.buildPythonPackage {
     name = "django-endless-pagination-2.0";
     buildInputs = with self; [];
@@ -199,6 +259,7 @@
       md5 = "bcd7662eb69a5cf726b927e61ee8013e";
     };
   };
+
   django-oauth-toolkit = super.buildPythonPackage {
     name = "django-oauth-toolkit-0.10.0";
     buildInputs = with self; [];
@@ -220,13 +281,33 @@
     };
   };
   django-recaptcha = super.buildPythonPackage {
-    name = "django-recaptcha-1.0.4";
+    name = "django-recaptcha-1.0.5";
     buildInputs = with self; [];
     doCheck = false;
-    propagatedBuildInputs = with self; [];
+    propagatedBuildInputs = with self; [django];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/d/django-recaptcha/django-recaptcha-1.0.4.tar.gz";
-      md5 = "65c7c8d62688fb569525ef380f0008c8";
+      url = "https://pypi.python.org/packages/source/d/django-recaptcha/django-recaptcha-1.0.5.tar.gz";
+      md5 = "0314e33ebeda3405c2e22139954b3da4";
+    };
+  };
+  django-redis = super.buildPythonPackage {
+    name = "django-redis-4.3.0";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [redis];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/d/django-redis/django-redis-4.3.0.tar.gz";
+      md5 = "271fc8f34da4bc1ca1257b2574207aec";
+    };
+  };
+  django-rest-swagger = super.buildPythonPackage {
+    name = "django-rest-swagger-0.3.4";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [django djangorestframework PyYAML];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/d/django-rest-swagger/django-rest-swagger-0.3.4.tar.gz";
+      md5 = "312aafb88eb4bbfceaf883c80c3466b9";
     };
   };
   django-scrypt = super.buildPythonPackage {
@@ -240,13 +321,13 @@
     };
   };
   django-treebeard = super.buildPythonPackage {
-    name = "django-treebeard-3.0";
+    name = "django-treebeard-4.0";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [django];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/d/django-treebeard/django-treebeard-3.0.tar.gz";
-      md5 = "3fcc74669c1735c6ab1081c3416e419c";
+      url = "https://pypi.python.org/packages/source/d/django-treebeard/django-treebeard-4.0.tar.gz";
+      md5 = "d5a4b3b30fda8e742900b277c4fdef6b";
     };
   };
   djangorestframework = super.buildPythonPackage {
@@ -270,13 +351,23 @@
     };
   };
   enum34 = super.buildPythonPackage {
-    name = "enum34-1.1.1";
+    name = "enum34-1.1.2";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/e/enum34/enum34-1.1.1.tar.gz";
-      md5 = "5edaf22a14ec2769fc973a0443bf02d5";
+      url = "https://pypi.python.org/packages/source/e/enum34/enum34-1.1.2.tar.gz";
+      md5 = "025bb71b3f9d2fad15d0ee53e48dc873";
+    };
+  };
+  execnet = super.buildPythonPackage {
+    name = "execnet-1.4.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [apipkg];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/e/execnet/execnet-1.4.1.tar.gz";
+      md5 = "0ff84b6c79d0dafb7e2971629c4d127a";
     };
   };
   gnupg = super.buildPythonPackage {
@@ -300,13 +391,13 @@
     };
   };
   ipaddress = super.buildPythonPackage {
-    name = "ipaddress-1.0.15";
+    name = "ipaddress-1.0.16";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/i/ipaddress/ipaddress-1.0.15.tar.gz";
-      md5 = "12915e923b738107e47827478d553ba1";
+      url = "https://pypi.python.org/packages/source/i/ipaddress/ipaddress-1.0.16.tar.gz";
+      md5 = "1e27b62aa20f5b6fc200b2bdbf0d0847";
     };
   };
   jsonfield = super.buildPythonPackage {
@@ -339,16 +430,6 @@
       None = "None";
     };
   };
-  libsass = super.buildPythonPackage {
-    name = "libsass-0.10.0";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [six];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/source/l/libsass/libsass-0.10.0.tar.gz";
-      md5 = "8b32bc88312e791a01ab1ea6515c3fa0";
-    };
-  };
   lockfile = super.buildPythonPackage {
     name = "lockfile-0.12.2";
     buildInputs = with self; [];
@@ -357,6 +438,16 @@
     src = fetchurl {
       url = "https://pypi.python.org/packages/source/l/lockfile/lockfile-0.12.2.tar.gz";
       md5 = "a6a1a82957a23afdf44cfdd039b65ff9";
+    };
+  };
+  markdown = super.buildPythonPackage {
+    name = "markdown-2.6.5";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/M/Markdown/Markdown-2.6.5.tar.gz";
+      md5 = "4fdb39248c9919e32ab68f5e5a9fa9f2";
     };
   };
   ndg-httpsclient = super.buildPythonPackage {
@@ -379,6 +470,16 @@
       md5 = "02772867bf246b3b37f4ed22786c41f5";
     };
   };
+  pbr = super.buildPythonPackage {
+    name = "pbr-1.8.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/p/pbr/pbr-1.8.1.tar.gz";
+      md5 = "c8f9285e1a4ca6f9654c529b158baa3a";
+    };
+  };
   psutil = super.buildPythonPackage {
     name = "psutil-3.3.0";
     buildInputs = with self; [];
@@ -397,6 +498,16 @@
     src = fetchurl {
       url = "https://pypi.python.org/packages/source/p/psycopg2/psycopg2-2.6.1.tar.gz";
       md5 = "842b44f8c95517ed5b792081a2370da1";
+    };
+  };
+  py = super.buildPythonPackage {
+    name = "py-1.4.31";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/p/py/py-1.4.31.tar.gz";
+      md5 = "5d2c63c56dc3f2115ec35c066ecd582b";
     };
   };
   py-bcrypt = super.buildPythonPackage {
@@ -430,13 +541,13 @@
     };
   };
   pyjade = super.buildPythonPackage {
-    name = "pyjade-3.1.0";
+    name = "pyjade-4.0.0";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [six];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/p/pyjade/pyjade-3.1.0.tar.gz";
-      md5 = "e6a38f7c5c4f6fdee15800592a85eb1d";
+      url = "https://pypi.python.org/packages/source/p/pyjade/pyjade-4.0.0.tar.gz";
+      md5 = "c25c8433c0aed7d0e47de4e3f9bc8026";
     };
   };
   pyopenssl = super.buildPythonPackage {
@@ -447,6 +558,36 @@
     src = fetchurl {
       url = "https://pypi.python.org/packages/source/p/pyOpenSSL/pyOpenSSL-0.15.1.tar.gz";
       md5 = "f447644afcbd5f0a1f47350fec63a4c6";
+    };
+  };
+  pytest = super.buildPythonPackage {
+    name = "pytest-2.8.5";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [py];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/p/pytest/pytest-2.8.5.zip";
+      md5 = "8493b06f700862f1294298d6c1b715a9";
+    };
+  };
+  pytest-cache = super.buildPythonPackage {
+    name = "pytest-cache-1.0";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [pytest execnet];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/p/pytest-cache/pytest-cache-1.0.tar.gz";
+      md5 = "e51ff62fec70a1fd456d975ce47977cd";
+    };
+  };
+  pytest-pythonpath = super.buildPythonPackage {
+    name = "pytest-pythonpath-0.7";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [pytest];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/p/pytest-pythonpath/pytest-pythonpath-0.7.tar.gz";
+      md5 = "967f9a43872e9ecca39e5895d0f56155";
     };
   };
   python-daemon = super.buildPythonPackage {
@@ -479,14 +620,24 @@
       md5 = "ad650c0ce9150d3b53d29d686c09fdda";
     };
   };
-  requests = super.buildPythonPackage {
-    name = "requests-2.9.0";
+  redis = super.buildPythonPackage {
+    name = "redis-2.10.5";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/r/requests/requests-2.9.0.tar.gz";
-      md5 = "2f46fdceaf4f63e5e3665a8cb50d284f";
+      url = "https://pypi.python.org/packages/source/r/redis/redis-2.10.5.tar.gz";
+      md5 = "3b26c2b9703b4b56b30a1ad508e31083";
+    };
+  };
+  requests = super.buildPythonPackage {
+    name = "requests-2.9.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/r/requests/requests-2.9.1.tar.gz";
+      md5 = "0b7f480d19012ec52bab78292efd976d";
     };
   };
   scrypt = super.buildPythonPackage {
@@ -500,13 +651,13 @@
     };
   };
   setuptools = super.buildPythonPackage {
-    name = "setuptools-19.1.1";
+    name = "setuptools-19.2";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/s/setuptools/setuptools-19.1.1.tar.gz";
-      md5 = "792297b8918afa9faf826cb5ec4a447a";
+      url = "https://pypi.python.org/packages/source/s/setuptools/setuptools-19.2.tar.gz";
+      md5 = "78353b1f80375ca5e088f4b4627ffe03";
     };
   };
   six = super.buildPythonPackage {
@@ -520,13 +671,23 @@
     };
   };
   sqlalchemy = super.buildPythonPackage {
-    name = "sqlalchemy-1.0.10";
+    name = "sqlalchemy-1.0.11";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/S/SQLAlchemy/SQLAlchemy-1.0.10.tar.gz";
-      md5 = "84f01631cc4813a0298bf68ce27d9c5d";
+      url = "https://pypi.python.org/packages/source/S/SQLAlchemy/SQLAlchemy-1.0.11.tar.gz";
+      md5 = "0bff4f96f0a25f44415a6bab7a741148";
+    };
+  };
+  sqlparse = super.buildPythonPackage {
+    name = "sqlparse-0.1.18";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/s/sqlparse/sqlparse-0.1.18.tar.gz";
+      md5 = "777942cb613ebbaedadda81dc7fcdb9b";
     };
   };
   subprocess32 = super.buildPythonPackage {
@@ -550,17 +711,37 @@
     };
   };
   uwsgi = super.buildPythonPackage {
-    name = "uwsgi-2.0.11.2";
+    name = "uwsgi-2.0.12";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/u/uWSGI/uwsgi-2.0.11.2.tar.gz";
-      md5 = "1f02dcbee7f6f61de4b1fd68350cf16f";
+      url = "https://pypi.python.org/packages/source/u/uWSGI/uwsgi-2.0.12.tar.gz";
+      md5 = "1451cab954bad0d7d7429e4d2c84b5df";
+    };
+  };
+  waitress = super.buildPythonPackage {
+    name = "waitress-0.8.10";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/w/waitress/waitress-0.8.10.tar.gz";
+      md5 = "a957f79c1b56224660a5b68c8ef29c8b";
+    };
+  };
+  webtest = super.buildPythonPackage {
+    name = "webtest-2.0.20";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [six WebOb waitress beautifulsoup4];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/W/WebTest/WebTest-2.0.20.tar.gz";
+      md5 = "fa2a8a1df774ca1b5be2f027c552f338";
     };
   };
 
 ### Test requirements
 
-  
+
 }

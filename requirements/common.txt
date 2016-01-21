@@ -34,3 +34,5 @@ celery>=3.1.20
 django-otp>=0.3.4
 jsonfield>=1.0
 django-countries>=3.4.1
+
+pbr
