@@ -1,6 +1,7 @@
+-r common.txt
+-r live.txt
 -r devel.txt
 
 django_admin_bootstrapped>=2.4.0
 django>=1.8, <1.9
-django-configurations-x
 https://github.com/pytest-dev/pytest-django/archive/master.zip

@@ -1,5 +1,6 @@
+-r common.txt
+-r live.txt
 -r devel.txt
 
 django_admin_bootstrapped==2.4.0
 django<1.8
-django-configurations

@@ -3,7 +3,7 @@
   assert pkgs.lib.any (x: x == djangoVersion) ["1.7" "1.8"];
 
 let
-  importPath = if djangoVersion == "1.8" then ./python-packages_django1.8.nix else ./python-packages_django1.7.nix;
+  importPath = if djangoVersion == "1.7" then ./python-packages_django1.7.nix else ./python-packages_django1.8.nix;
   elem = builtins.elem;
   basename = path: with pkgs.lib; last (splitString "/" path);
   startsWith = prefix: full: let

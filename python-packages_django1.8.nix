@@ -20,13 +20,13 @@
     };
   };
   Pillow = super.buildPythonPackage {
-    name = "Pillow-3.1.0";
+    name = "Pillow-3.1.1";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/P/Pillow/Pillow-3.1.0.tar.gz";
-      md5 = "506b65d4353cd76b480decb961fa753a";
+      url = "https://pypi.python.org/packages/source/P/Pillow/Pillow-3.1.1.tar.gz";
+      md5 = "d382a86c4b9b1c8de684bd00dad43bb8";
     };
   };
   PyYAML = super.buildPythonPackage {
@@ -60,13 +60,13 @@
     };
   };
   amqp = super.buildPythonPackage {
-    name = "amqp-1.4.8";
+    name = "amqp-1.4.9";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/a/amqp/amqp-1.4.8.tar.gz";
-      md5 = "13ca20ef5c1cea8c2841b9d1f91f7163";
+      url = "https://pypi.python.org/packages/source/a/amqp/amqp-1.4.9.tar.gz";
+      md5 = "df57dde763ba2dea25b3fa92dfe43c19";
     };
   };
   anyjson = super.buildPythonPackage {
@@ -110,23 +110,23 @@
     };
   };
   celery = super.buildPythonPackage {
-    name = "celery-3.1.19";
+    name = "celery-3.1.20";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [pytz billiard kombu];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/c/celery/celery-3.1.19.tar.gz";
-      md5 = "fba8c4b269814dc6dbc36abb0e66c384";
+      url = "https://pypi.python.org/packages/source/c/celery/celery-3.1.20.tar.gz";
+      md5 = "025128230881de934461f1f2702ef721";
     };
   };
   cffi = super.buildPythonPackage {
-    name = "cffi-1.4.2";
+    name = "cffi-1.5.2";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [pycparser];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/c/cffi/cffi-1.4.2.tar.gz";
-      md5 = "81357fe5042d00650b85b728cc181df2";
+      url = "https://pypi.python.org/packages/source/c/cffi/cffi-1.5.2.tar.gz";
+      md5 = "fa766133f7299464c8bf857e0c966a82";
     };
   };
   configobj = super.buildPythonPackage {
@@ -150,23 +150,23 @@
     };
   };
   cryptography = super.buildPythonPackage {
-    name = "cryptography-1.1.2";
+    name = "cryptography-1.2.2";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [idna pyasn1 six setuptools enum34 ipaddress cffi];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/c/cryptography/cryptography-1.1.2.tar.gz";
-      md5 = "15eeba9e31f852bac21155baa3dfbc61";
+      url = "https://pypi.python.org/packages/source/c/cryptography/cryptography-1.2.2.tar.gz";
+      md5 = "2b25eebd1d3c6bae52b46f0dcec74dfb";
     };
   };
   django = super.buildPythonPackage {
-    name = "django-1.8.8";
+    name = "django-1.8.10";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/D/Django/Django-1.8.8.tar.gz";
-      md5 = "08ecf83b7e9d064ed7e3981ddc3a8a15";
+      url = "https://pypi.python.org/packages/source/D/Django/Django-1.8.10.tar.gz";
+      md5 = "8be1858dfee4878768ce686165e29c89";
     };
   };
   django-admin-bootstrapped = super.buildPythonPackage {
@@ -189,14 +189,14 @@
       md5 = "a7f4a46071325d5edf4011fd31154b4d";
     };
   };
-  django-configurations-x = super.buildPythonPackage {
-    name = "django-configurations-x-0.8.2";
+  django-configurations = super.buildPythonPackage {
+    name = "django-configurations-1.0";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/d/django-configurations-x/django-configurations-x-0.8.2.tar.gz";
-      md5 = "55e98b765dae161b44c74fcfb2e317a2";
+      url = "https://pypi.python.org/packages/source/d/django-configurations/django-configurations-1.0.tar.gz";
+      md5 = "c2cf12442a8e36e6846a9e49255287bb";
     };
   };
   django-cors-headers = super.buildPythonPackage {
@@ -220,13 +220,13 @@
     };
   };
   django-crispy-forms = super.buildPythonPackage {
-    name = "django-crispy-forms-1.5.2";
+    name = "django-crispy-forms-1.6.0";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/d/django-crispy-forms/django-crispy-forms-1.5.2.tar.gz";
-      md5 = "4e5e0f6a9ddef530417891ee4c495562";
+      url = "https://pypi.python.org/packages/source/d/django-crispy-forms/django-crispy-forms-1.6.0.tar.gz";
+      md5 = "cf9537e0d2e5150644f45ea966b106dc";
     };
   };
   django-debug-toolbar = super.buildPythonPackage {
@@ -237,16 +237,6 @@
     src = fetchurl {
       url = "https://pypi.python.org/packages/source/d/django-debug-toolbar/django-debug-toolbar-1.4.tar.gz";
       md5 = "8c9402e11032a76e316fb8e6efe01196";
-    };
-  };
-  django-endless-pagination = super.buildPythonPackage {
-    name = "django-endless-pagination-2.0";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/source/d/django-endless-pagination/django-endless-pagination-2.0.tar.gz";
-      md5 = "8efa40cee51ebe229ce15ed258594ba0";
     };
   };
   django-extensions = super.buildPythonPackage {
@@ -270,13 +260,13 @@
     };
   };
   django-otp = super.buildPythonPackage {
-    name = "django-otp-0.3.3";
+    name = "django-otp-0.3.4";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [django];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/d/django-otp/django-otp-0.3.3.tar.gz";
-      md5 = "b8ae9ef536b384539a990118bd8e627e";
+      url = "https://pypi.python.org/packages/source/d/django-otp/django-otp-0.3.4.tar.gz";
+      md5 = "1751add9363c0968c996bf6d8bda65f6";
     };
   };
   django-recaptcha = super.buildPythonPackage {
@@ -300,13 +290,13 @@
     };
   };
   django-rest-swagger = super.buildPythonPackage {
-    name = "django-rest-swagger-0.3.4";
+    name = "django-rest-swagger-0.3.5";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [django djangorestframework PyYAML];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/d/django-rest-swagger/django-rest-swagger-0.3.4.tar.gz";
-      md5 = "312aafb88eb4bbfceaf883c80c3466b9";
+      url = "https://pypi.python.org/packages/source/d/django-rest-swagger/django-rest-swagger-0.3.5.tar.gz";
+      md5 = "dc889f3c52d8f31acf7d16398aa0c1d1";
     };
   };
   django-scrypt = super.buildPythonPackage {
@@ -410,33 +400,33 @@
     };
   };
   kombu = super.buildPythonPackage {
-    name = "kombu-3.0.32";
+    name = "kombu-3.0.33";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [anyjson amqp];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/k/kombu/kombu-3.0.32.tar.gz";
-      md5 = "8819aa97abb09f5b27f29e35b8ecaeaf";
+      url = "https://pypi.python.org/packages/source/k/kombu/kombu-3.0.33.tar.gz";
+      md5 = "75eaaaa57fd5f1cd304e285e20867f5f";
     };
   };
   kryptomime = super.buildPythonPackage {
     name = "kryptomime-0.5.0";
     buildInputs = with self; [];
     doCheck = false;
-    propagatedBuildInputs = with self; [gnupg six subprocess32 gnupg six subprocess32 gnupg six subprocess32 gnupg six subprocess32];
+    propagatedBuildInputs = with self; [gnupg six subprocess32 gnupg six subprocess32 gnupg six subprocess32];
     src = fetchurl {
       url = "https://github.com/ttanner/kryptomime/archive/master.zip";
       None = "None";
     };
   };
   libsass = super.buildPythonPackage {
-    name = "libsass-0.10.0";
+    name = "libsass-0.10.1";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [six];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/l/libsass/libsass-0.10.0.tar.gz";
-      md5 = "8b32bc88312e791a01ab1ea6515c3fa0";
+      url = "https://pypi.python.org/packages/source/l/libsass/libsass-0.10.1.tar.gz";
+      md5 = "de8ebe9aabf121db31034515aa2cfe4a";
     };
   };
   lockfile = super.buildPythonPackage {
@@ -479,14 +469,24 @@
       md5 = "02772867bf246b3b37f4ed22786c41f5";
     };
   };
-  psutil = super.buildPythonPackage {
-    name = "psutil-3.3.0";
+  pbr = super.buildPythonPackage {
+    name = "pbr-1.8.1";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/p/psutil/psutil-3.3.0.tar.gz";
-      md5 = "0625db01ea46417308db94cc59362b65";
+      url = "https://pypi.python.org/packages/source/p/pbr/pbr-1.8.1.tar.gz";
+      md5 = "c8f9285e1a4ca6f9654c529b158baa3a";
+    };
+  };
+  psutil = super.buildPythonPackage {
+    name = "psutil-4.0.0";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/p/psutil/psutil-4.0.0.tar.gz";
+      md5 = "6f327b7cc813ad6d4584be54ac89bae8";
     };
   };
   psycopg2 = super.buildPythonPackage {
@@ -540,13 +540,13 @@
     };
   };
   pyjade = super.buildPythonPackage {
-    name = "pyjade-3.1.0";
+    name = "pyjade-4.0.0";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [six];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/p/pyjade/pyjade-3.1.0.tar.gz";
-      md5 = "e6a38f7c5c4f6fdee15800592a85eb1d";
+      url = "https://pypi.python.org/packages/source/p/pyjade/pyjade-4.0.0.tar.gz";
+      md5 = "c25c8433c0aed7d0e47de4e3f9bc8026";
     };
   };
   pyopenssl = super.buildPythonPackage {
@@ -560,13 +560,13 @@
     };
   };
   pytest = super.buildPythonPackage {
-    name = "pytest-2.8.5";
+    name = "pytest-2.8.7";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [py];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/p/pytest/pytest-2.8.5.zip";
-      md5 = "8493b06f700862f1294298d6c1b715a9";
+      url = "https://pypi.python.org/packages/source/p/pytest/pytest-2.8.7.tar.gz";
+      md5 = "685e2137062c9821b1b74a4814795514";
     };
   };
   pytest-cache = super.buildPythonPackage {
@@ -577,6 +577,16 @@
     src = fetchurl {
       url = "https://pypi.python.org/packages/source/p/pytest-cache/pytest-cache-1.0.tar.gz";
       md5 = "e51ff62fec70a1fd456d975ce47977cd";
+    };
+  };
+  pytest-django = super.buildPythonPackage {
+    name = "pytest-django-2.9.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [pytest];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/p/pytest-django/pytest-django-2.9.1.tar.gz";
+      md5 = "3c9dde85e99ec409df209a62b4715e1a";
     };
   };
   pytest-pythonpath = super.buildPythonPackage {
@@ -590,13 +600,13 @@
     };
   };
   python-daemon = super.buildPythonPackage {
-    name = "python-daemon-2.1.0";
+    name = "python-daemon-2.1.1";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [setuptools docutils lockfile];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/p/python-daemon/python-daemon-2.1.0.tar.gz";
-      md5 = "f474f94eccc544968a36430f88a70c15";
+      url = "https://pypi.python.org/packages/source/p/python-daemon/python-daemon-2.1.1.tar.gz";
+      md5 = "72e2acf2c3d69c7fa75a6625d06adfd0";
     };
   };
   python-editor = super.buildPythonPackage {
@@ -650,13 +660,13 @@
     };
   };
   setuptools = super.buildPythonPackage {
-    name = "setuptools-19.2";
+    name = "setuptools-20.2.2";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/s/setuptools/setuptools-19.2.tar.gz";
-      md5 = "78353b1f80375ca5e088f4b4627ffe03";
+      url = "https://pypi.python.org/packages/source/s/setuptools/setuptools-20.2.2.tar.gz";
+      md5 = "bf37191cb4c1472fb61e6f933d2006b1";
     };
   };
   six = super.buildPythonPackage {
@@ -670,13 +680,13 @@
     };
   };
   sqlalchemy = super.buildPythonPackage {
-    name = "sqlalchemy-1.0.11";
+    name = "sqlalchemy-1.0.12";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/S/SQLAlchemy/SQLAlchemy-1.0.11.tar.gz";
-      md5 = "0bff4f96f0a25f44415a6bab7a741148";
+      url = "https://pypi.python.org/packages/source/S/SQLAlchemy/SQLAlchemy-1.0.12.tar.gz";
+      md5 = "6d19ef29883bbebdcac6613cf391cac4";
     };
   };
   sqlparse = super.buildPythonPackage {
