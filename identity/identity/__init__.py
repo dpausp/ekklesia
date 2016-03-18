@@ -6,11 +6,6 @@ import os, configurations
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'identity.settings')
 os.environ.setdefault('DJANGO_CONFIGURATION', 'Development')
 
-try: configurations.setup()
-except:
-    import traceback
-    traceback.print_exc()
-
 if settings.USE_CELERY:
     # This will make sure the app is always imported when
     # Django starts so that shared_task will use this app.
