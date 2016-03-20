@@ -6,27 +6,18 @@ let
   importPath = if djangoVersion == "1.7" then ./python-packages_django1.7.nix else ./python-packages_django1.8.nix;
   elem = builtins.elem;
   basename = path: with pkgs.lib; last (splitString "/" path);
-  startsWith = prefix: full: let
-    actualPrefix = builtins.substring 0 (builtins.stringLength prefix) full;
-  in actualPrefix == prefix;
 
   src-filter = path: type: with pkgs.lib;
     let
       ext = last (splitString "." path);
     in
-      !elem (basename path) [".git" "__pycache__" ".eggs"] &&
-      !elem ext ["egg-info" "pyc"] &&
-      !startsWith "result" path;
+      !elem (basename path) [".git" "__pycache__" ".eggs" "result"] &&
+      !elem ext ["egg-info" "pyc"];
 
   ekklesia-src = builtins.filterSource src-filter ./.;
 
-  pythonPackagesWithLocals = pythonPackages.override (a: {
-    self = pythonPackagesWithLocals;
-  })
-  // deps;
-
   gen_deps = (scopedImport {
-    self = pythonPackagesWithLocals;
+    self = pythonPackages // deps;
     super = pythonPackages;
     inherit pkgs;
     inherit (pkgs) fetchurl fetchgit;
@@ -43,7 +34,7 @@ let
 
   overrides = rec {
     psycopg2 = gen_deps.psycopg2.override (attrs: {
-      propagatedBuildInputs = [pkgs.postgresql94];
+      propagatedBuildInputs = [pkgs.postgresql];
     });
 
     uwsgi = gen_deps.uwsgi.override (attrs: {
@@ -108,7 +99,6 @@ let
   lib = pkgs.lib;
   
   nixpkgs_deps = [pkgs.sassc]; # ++ lib.optional lib.inNixShell [ pythonPackages.ipdb ];
-
 
   ekklesia = pythonPackages.buildPythonPackage rec {
     propagatedBuildInputs = builtins.attrValues deps ++ nixpkgs_deps;

@@ -150,13 +150,13 @@
     };
   };
   cryptography = super.buildPythonPackage {
-    name = "cryptography-1.2.2";
+    name = "cryptography-1.3";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [idna pyasn1 six setuptools enum34 ipaddress cffi];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/source/c/cryptography/cryptography-1.2.2.tar.gz";
-      md5 = "2b25eebd1d3c6bae52b46f0dcec74dfb";
+      url = "https://pypi.python.org/packages/source/c/cryptography/cryptography-1.3.tar.gz";
+      sha256 = "1x7hvh38zv1g9wf6vg7rqnz5ipknj3xb03bw0qv6pnwhlw5qvk2x";
     };
   };
   django = super.buildPythonPackage {
