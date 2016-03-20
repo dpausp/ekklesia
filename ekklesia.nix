@@ -98,7 +98,7 @@ let
   
   lib = pkgs.lib;
   
-  nixpkgs_deps = [pkgs.sassc]; # ++ lib.optional lib.inNixShell [ pythonPackages.ipdb ];
+  nixpkgs_deps = [pkgs.sassc pkgs.gnupg1orig ]; # ++ lib.optional lib.inNixShell [ pythonPackages.ipdb ];
 
   ekklesia = pythonPackages.buildPythonPackage rec {
     propagatedBuildInputs = builtins.attrValues deps ++ nixpkgs_deps;
