@@ -78,9 +78,9 @@ let
       }; 
     });
 
-    setuptools = pkgs.pythonPackages.setuptools;
+    setuptools = pythonPackages.setuptools;
 
-    setuptools-scm = pkgs.buildPythonPackage {
+    setuptools-scm = pythonPackages.buildPythonPackage {
       name = "setuptools-scm-1.7.0";
       src = pkgs.fetchurl {
         url = "https://pypi.python.org/packages/source/s/setuptools_scm/setuptools_scm-1.7.0.tar.gz";
@@ -98,7 +98,7 @@ let
   
   lib = pkgs.lib;
   
-  nixpkgs_deps = [pkgs.sassc pkgs.gnupg1orig ]; # ++ lib.optional lib.inNixShell [ pythonPackages.ipdb ];
+  nixpkgs_deps = [pkgs.sassc pkgs.gnupg1orig ] ++ lib.optional lib.inNixShell [ pythonPackages.ipdb pythonPackages.ipython ];
 
   ekklesia = pythonPackages.buildPythonPackage rec {
     propagatedBuildInputs = builtins.attrValues deps ++ nixpkgs_deps;
@@ -127,7 +127,7 @@ let
 
   };
 
-  ekklesiaenv = pkgs.python.buildEnv.override {
+  ekklesiaenv = pythonPackages.python.buildEnv.override {
     extraLibs = builtins.attrValues deps;
     ignoreCollisions = true;
   };
