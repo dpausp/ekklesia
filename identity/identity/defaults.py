@@ -114,8 +114,9 @@ def defaults(production=False,admin=False,site=0):
 		# http://www.i18nguy.com/unicode/language-identifiers.html
 		LANGUAGE_CODE = 'de-de'
 		LANGUAGES = (
-			('en', 'English'),
 			('de', 'Deutsch'),
+			('en', 'English'),
+			('fr', 'Français'),
 		)
 
 		# Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -153,6 +154,7 @@ def defaults(production=False,admin=False,site=0):
 			'oauth2_provider',
 			'corsheaders',
 			'rest_framework',
+			'pyjade.ext.django',
 			#'rest_framework.authtoken',
 			#'rest_framework_digestauth',
 			'crispy_forms',
@@ -284,10 +286,7 @@ def defaults(production=False,admin=False,site=0):
 		)
 
 		# List of callables that know how to import templates from various sources.
-		if DEBUG:
-			TEMPLATE_LOADERS = (('pyjade.ext.django.Loader',_default_loaders),)
-		else:
-			TEMPLATE_LOADERS = _default_loaders
+		TEMPLATE_LOADERS = (('pyjade.ext.django.Loader',_default_loaders),)
 
 		TEMPLATE_DIRS = (
 			# Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

@@ -2,36 +2,59 @@ extends base
 -load i18n
 
 block content
-    h1 Hello!
-    p: -trans 'Welcome to the ID server!'
-    hr
+  h1 
+    -blocktrans with name=user.username
+      |Hello {{ name }}!
+    | 
+    small: -trans 'Welcome to the Ekklesia eDemocracy ID Server!'
 
-    if user.is_staff
-        p: a(href="{% url 'admin:index' %}"): -trans 'administration'|capfirst
-    p: a(href="{% url 'accounts:username' %}"): -trans 'change username'
-    p: a(href="{% url 'accounts:email' %}"): -trans 'change email'
-    p: a(href="{% url 'accounts:password' %}"): -trans 'change password'
-    p: a(href="{% url 'accounts:profile' %}"): -trans 'show profile'
-    p: a(href="{% url 'accounts:profile_edit' %}"): -trans 'edit profile'
+  .row
+    .col-sm-6
+      h2: - trans 'Actions'
+      ul.list-group
 
-    p
-        -trans 'Username:'
-        {{ username }}
-    p
-        -trans 'Public key registered:'
-        {{ key_registered|yesno }}
-    p
-        -trans 'Status:'
-        {{ status }}
-    p
-        -trans 'Verified:'
-        {{ status|yesno }}
-    p
-        -trans 'Eligible:'
-        {{ eligible|yesno }}
-    p
-        -trans 'Two-factor authenticiation:'
-        {{ two_factor_auth|yesno }}
-    p
-        -trans 'Notify on login:'
-        {{ notify_login|yesno }}
+      if user.is_staff
+        li.list-group-item
+          a(href="{% url 'admin:index' %}"): -trans 'Administration'
+
+      li.list-group-item
+        a(href="{% url 'accounts:username' %}"): -trans 'Change Username'
+
+      li.list-group-item
+        a(href="{% url 'accounts:email' %}"): -trans 'Change Email'
+
+      li.list-group-item
+        a(href="{% url 'accounts:password' %}"): -trans 'Change Password'
+
+      li.list-group-item
+        a(href="{% url 'accounts:profile' %}"): -trans 'Show Profile'
+
+      li.list-group-item
+        a(href="{% url 'accounts:profile_edit' %}"): -trans 'Edit Profile'
+
+    .col-sm-6
+      h2: -trans 'User info'
+      dl
+        dt: -trans 'Username'
+        dd= username
+
+        dt: -trans 'Status'
+        dd= status
+
+        dt: -trans 'Verified'
+        dd= verified|yesno
+
+        dt: -trans 'Eligible'
+        dd= eligible|yesno
+
+        dt: -trans 'Public key registered'
+        dd= key_registered|yesno
+
+        dt: -trans 'Two-factor authentication (2FA)'
+        dd= two_factor_auth|yesno
+
+        dt: -trans 'Notify on login'
+        dd= notify_login|yesno
+
+  hr
+

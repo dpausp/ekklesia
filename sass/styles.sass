@@ -1,5 +1,30 @@
 @import "libsass"
-// Import custom Bootstrap variables
-@import "bootstrap-variables"
-// Import Bootstrap for Sass
-@import "bootstrap"
+// Import our custom Bootstrap theme
+@import "theme"
+// Import Bootstrap base
+@import "bootstrap/bootstrap"
+
+.form-group.row
+  margin-left: 0
+  margin-right: 0
+
+.form-text.top
+  margin-bottom: 1rem
+
+#main-wrapper
+  margin-top: 2rem
+
+.top_usercontrols
+  @extend .nav
+  @extend .pull-xs-right
+
+.top_navbar
+  @extend .navbar
+  @extend .bg-primary
+
+.top_navbar .nav-link
+  color: black
+
+#wrapper-inside
+  @extend .container
+
