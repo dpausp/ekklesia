@@ -3,21 +3,24 @@ extends base_top
 -load i18n
 
 block navigation
-    #nav-main
-        span
-            block login
-                if user.is_authenticated
-                    -trans 'Logged in as'
-                    |  
-                    {{ user.username }}
-                    a(href="{% url 'accounts:logout' %}")
-                        -trans 'log out'|capfirst
+  if user.is_authenticated
+    ul.nav.navbar-nav.pull-xs-right
+      li.nav-item
+        a.nav-link.btn(href="#")= user.username
+
+      li.nav-item
+        a.nav-link.btn(href="{% url 'accounts:logout' %}")
+            -trans 'log out'|capfirst
 
 block flash
-    if auth_form.non_field_errors or user_form.non_field_errors
-        .flash.error
-            | {{ auth_form.non_field_errors }}
-            | {{ user_form.non_field_errors }}
-    if notice
-        .flash.notice
-            | {{ notice }}
+  if auth_form.non_field_errors or user_form.non_field_errors
+    .flash.error
+      = auth_form.non_field_errors
+      = user_form.non_field_errors
+
+  if notice
+    .flash.notice
+      = notice
+
+
+//- vim: set filetype=jade sw=2 ts=2 sts=2 expandtab:

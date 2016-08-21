@@ -1,0 +1,21 @@
+extends base
+- load i18n
+- load crispy_forms_tags
+
+block title
+  -trans 'Register'
+
+block content
+  h1
+    -trans 'Create an account'
+  
+  .form-text.top
+    |Fill out the form (all fields are required), and your
+    |account will be created. You'll be sent an email with instructions on how
+    |to finish your registration.
+
+  - crispy form
+
+
+
+//- vim: set filetype=jade sw=2 ts=2 sts=2 expandtab: 

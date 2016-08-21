@@ -5,634 +5,149 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-26 23:03+0100\n"
-"PO-Revision-Date: 2013-03-12 12:58+0100\n"
-"Language: de\n"
+"POT-Creation-Date: 2016-08-26 14:28+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
 
-#: accounts/admin.py:90 accounts/admin.py:284
-msgid "Membership"
-msgstr ""
-
-#: accounts/admin.py:91 accounts/admin.py:204 accounts/admin.py:285
-msgid "Profile"
-msgstr ""
-
-#: accounts/admin.py:93 accounts/admin.py:205
-msgid "Permissions"
-msgstr ""
-
-#: accounts/admin.py:147
-msgid "Activate accounts"
-msgstr ""
-
-#: accounts/admin.py:153
-msgid "Deactivate accounts"
-msgstr ""
-
-#: accounts/admin.py:201 accounts/admin.py:216
-msgid "Personal info"
-msgstr ""
-
-#: accounts/admin.py:203
-msgid "User"
-msgstr ""
-
-#: accounts/admin.py:207
-msgid "Important dates"
-msgstr ""
-
-#: accounts/admin.py:245 accounts/admin.py:249
-msgid "Verifier"
-msgstr ""
-
-#: accounts/admin.py:293
-msgid "Verification"
-msgstr ""
-
-#: accounts/admin.py:321
-msgid "Confirm emails"
-msgstr ""
-
-#: accounts/admin.py:332
-msgid "Re-send confirmation emails"
-msgstr ""
-
-#: accounts/fields.py:35
-msgid "Invalid invitation code."
-msgstr ""
-
-#: accounts/forms.py:108
-msgid "Please enter your OTP token"
-msgstr ""
-
-#: accounts/forms.py:136
-msgid "Your username"
-msgstr ""
-
-#: accounts/forms.py:169
-msgid "This username does already exist. Please enter another one."
-msgstr ""
-
-#: accounts/forms.py:171 accounts/forms.py:228
-msgid "Your password was entered incorrectly. Please enter it again."
-msgstr ""
-
-#: accounts/forms.py:176 accounts/forms.py:339
-msgid "Username"
-msgstr ""
-
-#: accounts/forms.py:177 accounts/forms.py:340
-msgid "This value may contain only letters, numbers and @/./+/-/_ characters."
-msgstr ""
-
-#: accounts/forms.py:178 accounts/forms.py:233
-msgid "Current password"
-msgstr ""
-
-#: accounts/forms.py:226
-msgid "This email does already exist. Please enter another one."
-msgstr ""
-
-#: accounts/forms.py:231 accounts/forms.py:341
-msgid "E-mail"
-msgstr ""
-
-#: accounts/forms.py:232 accounts/forms.py:342
-msgid "E-mail (again)"
-msgstr ""
-
-#: accounts/forms.py:262 accounts/forms.py:383
-msgid "Invalid form."
-msgstr ""
-
-#: accounts/forms.py:265 accounts/forms.py:386
-msgid "The two email fields didn't match."
-msgstr ""
-
-#: accounts/forms.py:289 accounts/models.py:262
-msgid "verified public identity"
-msgstr ""
-
-#: accounts/forms.py:291
-msgid "verified personal profile"
-msgstr ""
-
-#: accounts/forms.py:344
-msgid "Password"
-msgstr ""
-
-#: accounts/forms.py:346
-msgid "Password (again)"
-msgstr ""
-
-#: accounts/forms.py:349
-#, python-format
-msgid ""
-"I have read and agree to the <a href=\"%s\" target=\"_blank\">Terms of "
-"Service</a>"
-msgstr ""
-
-#: accounts/forms.py:351
-msgid "You must agree to the terms to register"
-msgstr ""
-
-#: accounts/forms.py:376
-msgid "A user with that username already exists."
-msgstr ""
-
-#: accounts/forms.py:388
-msgid ""
-"This email address is already in use. Please supply a different email "
-"address."
-msgstr ""
-
-#: accounts/forms.py:391
-msgid "The two password fields didn't match."
-msgstr ""
-
-#: accounts/forms.py:396
-msgid "Invitation code"
-msgstr ""
-
-#: accounts/forms.py:399
-msgid "Activation secret"
-msgstr ""
-
-#: accounts/forms.py:414
-msgid "First name"
-msgstr ""
-
-#: accounts/forms.py:415
-msgid "Last name"
-msgstr ""
-
-#: accounts/forms.py:416
-msgid "Street/no or POBox"
-msgstr ""
-
-#: accounts/forms.py:417
-msgid "Address prefix"
-msgstr ""
-
-#: accounts/forms.py:418
-msgid "City"
-msgstr ""
-
-#: accounts/forms.py:419
-msgid "Postal code"
-msgstr ""
-
-#: accounts/forms.py:420
-msgid "This value may contain only digits."
-msgstr ""
-
-#: accounts/forms.py:421 accounts/models.py:239
-msgid "Country"
-msgstr ""
-
-#: accounts/models.py:43
-msgid "Nested group sync id"
-msgstr ""
-
-#: accounts/models.py:48
-msgid "Description of the nested group"
-msgstr ""
-
-#: accounts/models.py:87
-msgid "username"
-msgstr ""
-
-#: accounts/models.py:88
-msgid ""
-"Required. 30 characters or fewer. Letters, numbers and @/./+/-/_ characters"
-msgstr ""
-
-#: accounts/models.py:91
-msgid "Enter a valid username."
-msgstr ""
-
-#: accounts/models.py:93 accounts/models.py:328
-msgid "email address"
-msgstr ""
-
-#: accounts/models.py:94
-msgid "staff status"
-msgstr ""
-
-#: accounts/models.py:95
-msgid "Designates whether the user can log into this admin site."
-msgstr ""
-
-#: accounts/models.py:97
-msgid "active"
-msgstr ""
-
-#: accounts/models.py:98
-msgid ""
-"Designates whether this user should be treated as active. Unselect this "
-"instead of deleting accounts."
-msgstr ""
-
-#: accounts/models.py:100
-msgid "date joined"
-msgstr ""
-
-#: accounts/models.py:108 accounts/models.py:327
-msgid "user"
-msgstr ""
-
-#: accounts/models.py:109
-msgid "users"
-msgstr ""
-
-#: accounts/models.py:145
-msgid "user status"
-msgstr ""
-
-#: accounts/models.py:146
-msgid "Member UUID"
-msgstr ""
-
-#: accounts/models.py:147
-msgid "nested groups the users belongs to"
-msgstr ""
-
-#: accounts/models.py:150
-msgid "verified"
-msgstr ""
-
-#: accounts/models.py:151
-msgid "Designates whether the identify has been verified."
-msgstr ""
-
-#: accounts/models.py:154
-msgid "notes by staff"
-msgstr ""
-
-#: accounts/models.py:156
-msgid "unverified public identity"
-msgstr ""
-
-#: accounts/models.py:157
-msgid "unverified personal profile"
-msgstr ""
-
-#: accounts/models.py:158
-msgid "unverified public key fingerprint"
-msgstr ""
-
-#: accounts/models.py:159
-msgid "user avatar"
-msgstr ""
-
-#: accounts/models.py:161
-msgid "secure email"
-msgstr ""
-
-#: accounts/models.py:162
-msgid "Designates whether the email address is not stored locally."
-msgstr ""
-
-#: accounts/models.py:164
-msgid "whether to two factor authentication"
-msgstr ""
-
-#: accounts/models.py:165
-msgid "notify after login"
-msgstr ""
-
-#: accounts/models.py:166
-msgid ""
-"Designates whether a notification email is sent after every succesful login."
-msgstr ""
-
-#: accounts/models.py:228
-msgid "level of subdelegation possible"
-msgstr ""
-
-#: accounts/models.py:229
-msgid "date of expiration"
-msgstr ""
-
-#: accounts/models.py:233
-msgid "first name"
-msgstr ""
-
-#: accounts/models.py:234
-msgid "last name"
-msgstr ""
-
-#: accounts/models.py:235
-msgid "street/no or POBox"
-msgstr ""
-
-#: accounts/models.py:238
-msgid "postal code"
-msgstr ""
-
-#: accounts/models.py:260
-msgid "date verified"
-msgstr ""
-
-#: accounts/models.py:261
-msgid "identity verified"
-msgstr ""
-
-#: accounts/models.py:263
-msgid "verified personal information"
-msgstr ""
-
-#: accounts/models.py:264
-msgid "verified public key fingerprint"
-msgstr ""
-
-#: accounts/models.py:285
-msgid "user type"
-msgstr ""
-
-#: accounts/models.py:286
-msgid "invitation code"
-msgstr ""
-
-#: accounts/models.py:287
-msgid "member UUID"
-msgstr ""
-
-#: accounts/models.py:288
-msgid "secret"
-msgstr ""
-
-#: accounts/models.py:329
-msgid "confirmation key"
-msgstr ""
-
-#: accounts/models.py:330
-msgid "date created"
-msgstr ""
-
-#: accounts/models.py:335 accounts/models.py:336
-msgid "E-Mail confirmation"
-msgstr ""
-
-#: accounts/templates/accounts/authorize.html:4
+#: accounts/templates/accounts/authorize.jade:3
 msgid "Authorize"
-msgstr ""
+msgstr "Autorisiere"
 
-#: accounts/templates/accounts/authorize.html:8
+#: accounts/templates/accounts/authorize.jade:8
 msgid "Please correct the error below."
-msgstr ""
+msgstr "Bitte korrigiere den unten angezeigten Fehler."
 
-#: accounts/templates/accounts/authorize.html:8
+#: accounts/templates/accounts/authorize.jade:8
 msgid "Please correct the errors below."
-msgstr ""
+msgstr "Bitte korrigiere die unten angezeigten Fehler."
 
-#: accounts/templates/accounts/authorize.html:13
-msgid "Application requires following permissions"
-msgstr ""
+#: accounts/templates/accounts/authorize.jade:11
+msgid "Application requires following permissions:"
+msgstr "Die Anwendung benötigt die folgenden Rechte:"
 
-#: accounts/templates/accounts/authorize.html:26
-msgid "Password:"
-msgstr ""
-
-#: accounts/templates/accounts/authorize.html:30
+#: accounts/templates/accounts/authorize.jade:25
 msgid "Forgotten your password or username?"
-msgstr ""
+msgstr "Passwort oder Benutzername vergessen?"
 
-#: accounts/templates/accounts/departments.html:1
-#: accounts/templates/accounts/departments.html:2
-msgid "Departments"
-msgstr ""
-
-#: accounts/templates/accounts/index.html:3
-msgid "Welcome to the Ekklesia ID server!"
-msgstr ""
-
-#: accounts/templates/accounts/index.html:6
-msgid "administration"
-msgstr ""
-
-#: accounts/templates/accounts/profile_edit.html:1
-#: accounts/templates/accounts/profile_edit.html:3
+#: accounts/templates/accounts/index.jade:2
 #, python-format
-msgid "Profile of %(name)s"
-msgstr ""
+msgid "Hello %(name)s!"
+msgstr "Hallo %(name)s!"
 
-#: accounts/templates/registration/logged_out.html:1
-msgid "Logged out"
-msgstr ""
+#: accounts/templates/accounts/index.jade:3
+msgid "Welcome to the Ekklesia eDemocracy ID Server!"
+msgstr "Willkommen auf dem Televotia ID Server!"
 
-#: accounts/templates/registration/logged_out.html:3
-msgid "log in"
-msgstr ""
+#: accounts/templates/accounts/index.jade:7
+msgid "Actions"
+msgstr "Aktionen"
 
-#: accounts/templates/registration/password_reset_email.txt:4
-msgid "You're receiving this e-mail because you requested a password reset"
-msgstr ""
+#: accounts/templates/accounts/index.jade:10
+msgid "Administration"
+msgstr "Administration"
 
-#: accounts/templates/registration/password_reset_email.txt:5
-#, python-format
-msgid "for your user account at %(site_name)s"
-msgstr ""
+#: accounts/templates/accounts/index.jade:12
+msgid "Change Username"
+msgstr "Benuzername Ändern"
 
-#: accounts/templates/registration/password_reset_email.txt:7
-msgid "Please go to the following page and choose a new password:"
-msgstr ""
+#: accounts/templates/accounts/index.jade:14
+msgid "Change Email"
+msgstr "Email Ändern"
 
-#: accounts/templates/registration/password_reset_email.txt:11
-msgid "Your username, in case you've forgotten:"
-msgstr ""
+#: accounts/templates/accounts/index.jade:16
+msgid "Change Password"
+msgstr "Passwort Ändern"
 
-#: accounts/templates/registration/password_reset_email.txt:13
-msgid "Thanks for using our site!"
-msgstr ""
+#: accounts/templates/accounts/index.jade:18
+msgid "Show Profile"
+msgstr "Profil Anzeigen"
 
-#: accounts/templates/registration/password_reset_email.txt:15
-#, python-format
-msgid "The %(site_name)s team"
-msgstr ""
+#: accounts/templates/accounts/index.jade:20
+msgid "Edit Profile"
+msgstr "Profil Bearbeiten"
 
-#: accounts/views.py:339
-msgid "Password reset sent"
-msgstr ""
+#: accounts/templates/accounts/index.jade:24
+msgid "User info"
+msgstr "Benutzerinfo"
 
-#: accounts/views.py:340
-msgid ""
-"We've e-mailed you instructions for setting your password to the e-mail "
-"address you submitted. You should be receiving it shortly."
-msgstr ""
+#: accounts/templates/accounts/index.jade:27
+msgid "Username"
+msgstr "Benutzername"
 
-#: accounts/views.py:349
-msgid "Password reset"
-msgstr ""
+#: accounts/templates/accounts/index.jade:30
+msgid "Status"
+msgstr "Status"
 
-#: accounts/views.py:382
-msgid "Password reset complete"
-msgstr ""
+#: accounts/templates/accounts/index.jade:33
+msgid "Verified"
+msgstr "Verifiziert"
 
-#: accounts/views.py:391
-msgid "Enter new password"
-msgstr ""
+#: accounts/templates/accounts/index.jade:36
+msgid "Eligible"
+msgstr "Stimmberechtigt"
 
-#: accounts/views.py:397
-msgid "Password reset unsuccessful"
-msgstr ""
+#: accounts/templates/accounts/index.jade:39
+msgid "Public key registered"
+msgstr "Öffentlichen Schlüssel (Public key) registriert?"
 
-#: accounts/views.py:418
-msgid "Change user name"
-msgstr ""
+#: accounts/templates/accounts/index.jade:42
+msgid "Two-factor authentication (2FA)"
+msgstr "Zwei-Faktor-Authentifizierung (2FA)"
 
-#: accounts/views.py:441
-msgid "Change EMail"
-msgstr ""
+#: accounts/templates/accounts/index.jade:45
+msgid "Notify on login"
+msgstr "Benachrichtigung beim Login"
 
-#: accounts/views.py:450
-#, python-format
-msgid "Public profile of %s"
-msgstr ""
-
-#: accounts/views.py:483
+#: accounts/templates/accounts/profile.jade:2
 msgid "Edit profile"
-msgstr ""
+msgstr "Profil bearbeiten"
 
-#: idapi/models.py:48
-msgid "Push URIs list, space separated"
-msgstr ""
+#: accounts/templates/accounts/profile.jade:8
+msgid "Public identification (verified)"
+msgstr "Öffentliche Identifizierung (verifiziert)"
 
-#: idapi/models.py:52
-msgid "Whether to require two factor authentication"
-msgstr ""
+#: accounts/templates/accounts/profile.jade:11
+msgid "Public identification (unverified)"
+msgstr "Öffentliche Identifizerung (nicht verifiziert)"
 
-#: idapi/models.py:59
-msgid "share name"
-msgstr ""
+#: accounts/templates/accounts/profile.jade:14
+msgid "Public profile (verified)"
+msgstr "Öffentliches Profil (verifiziert)"
 
-#: idapi/models.py:60
-msgid "number of last object"
-msgstr ""
+#: accounts/templates/accounts/profile.jade:17
+msgid "Public profile (unverified)"
+msgstr "Öffentliches Profil (verifiziert)"
 
-#: idapi/models.py:61 idapi/models.py:185
-msgid "current version"
-msgstr ""
+#: accounts/templates/accounts/profile_edit.jade:1
+#: accounts/templates/accounts/profile_edit.jade:3
+msgid "Profile of %(name)s"
+msgstr "Profil von %(name)s"
 
-#: idapi/models.py:62 idapi/models.py:186
-msgid "last push"
-msgstr ""
+#: accounts/templates/registration/logged_out.jade:1
+msgid "Logged out"
+msgstr "Abgemeldet"
 
-#: idapi/models.py:63 idapi/models.py:95 idapi/models.py:187
-msgid "last modified"
-msgstr ""
+#: accounts/templates/registration/logged_out.jade:3
+msgid "log in"
+msgstr "Anmelden"
 
-#: idapi/models.py:65
-msgid "whether to delete an object only after all clients have seen/deleted it"
-msgstr ""
+#: accounts/templates/registration/registration_form.jade:1
+msgid "Register"
+msgstr "Registrieren"
 
-#: idapi/models.py:90
-msgid "share object"
-msgstr ""
+#: accounts/templates/registration/registration_form.jade:2
+msgid "Create an account"
+msgstr "Ein Benutzerkonto anlegen"
 
-#: idapi/models.py:93 idapi/models.py:146
-msgid "id"
-msgstr ""
-
-#: idapi/models.py:94 idapi/models.py:147
-msgid "version"
-msgstr ""
-
-#: idapi/models.py:98
-msgid "object data"
-msgstr ""
-
-#: idapi/models.py:148
-msgid "last_change"
-msgstr ""
-
-#: idapi/models.py:149
-msgid "action"
-msgstr ""
-
-#: idapi/models.py:168
-msgid "Application-specific member UUID"
-msgstr ""
-
-#: idapi/models.py:180
-msgid "list info"
-msgstr ""
-
-#: idapi/models.py:184
-msgid "number of last member"
-msgstr ""
-
-#: idapi/models.py:230
-msgid "position"
-msgstr ""
-
-#: idapi/models.py:255
-msgid "assigned identity for the application"
-msgstr ""
-
-#: idapi/models.py:256
-msgid "whether the message is outgoing, otherwise incoming"
-msgstr ""
-
-#: idapi/models.py:257
-msgid "whether the message needs to be encrypted/decrypted"
-msgstr ""
-
-#: idapi/models.py:258
-msgid "whether the message is an email"
-msgstr ""
-
-#: idapi/models.py:259
-msgid "status code"
-msgstr ""
-
-#: idapi/models.py:260
-msgid "time send/received"
-msgstr ""
-
-#: idapi/models.py:261
-msgid "whether the message is currently processed"
-msgstr ""
-
-#: idapi/models.py:262
-msgid "message data"
-msgstr ""
-
-#: idapi/models.py:284
-msgid "key type"
-msgstr ""
-
-#: idapi/models.py:285
-msgid "key trust"
-msgstr ""
-
-#: idapi/models.py:286
-msgid "expiration date"
-msgstr ""
-
-#: idapi/models.py:287
-msgid "whether this is the active key for the user"
-msgstr ""
-
-#: idapi/models.py:288
-msgid "key data"
-msgstr ""
-
-#: identity/templates/admin_app_name.html:2
-msgid "ID server"
-msgstr ""
-
-#: identity/templates/base.html:2
-msgid "Logged in as"
-msgstr ""
-
-#: identity/templates/base.html:4
+#: identity/templates/base.jade:5
 msgid "log out"
-msgstr ""
+msgstr "Abmelden"
+

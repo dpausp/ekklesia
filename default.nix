@@ -87,11 +87,16 @@ let
     postInstall = ''
       mkdir -p $out/share/www
       mkdir $out/share/templates
+      mkdir $out/share/locale
       for x in `find -type d -name templates`; do
           echo copying HTML templates from $x
           (cd $x && find -name '*.html' -exec cp -v --parents {} $out/share/templates \;) 
+          echo copying TXT templates from $x
+          (cd $x && find -name '*.txt' -exec cp -v --parents {} $out/share/templates \;) 
       done
       mv identity/static.prod $out/share/www/
+      echo copying locale files
+      (cd identity && find locale -name '*.mo' -exec cp -v --parents {} $out/share \;)
 
       echo $PYTHONPATH
       echo $PATH

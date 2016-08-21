@@ -34,6 +34,7 @@ if SITE_ID != 2: # main, not for API-only
         url(r'^oauth2/authorize/$', accounts.views.IDAuthorizationView.as_view(), name="authorize"),
         url(r'^oauth2/', include('oauth2_provider.urls', namespace='oauth2_provider')),
         url(r'', include('accounts.urls', namespace="accounts")),
+        url(r'^i18n/', include('django.conf.urls.i18n')),
     ]
 # API
 urlpatterns += [
