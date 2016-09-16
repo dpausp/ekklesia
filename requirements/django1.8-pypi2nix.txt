@@ -1,6 +1,5 @@
 six>=1.9
 gnupg>=2.0.2
-git+https://github.com/ttanner/kryptomime#egg=kryptomime
 psutil>=1.2.1
 requests>=2.9.1
 
@@ -11,27 +10,20 @@ python-daemon>=2.1
 kombu>=3.0.33
 unicodecsv
 
-# django
 libsass
 django-treebeard>=3.0
 django-extensions>=1.6.1
 django-configurations>=1.0
-Pillow>=3.1
 pyjade>=3.0
-git+https://github.com/lamby/django-agpl#egg=django-agpl
 django-cors-headers
 django-crispy-forms
 django-oauth-toolkit>=0.10
 djangorestframework>=3.3.2
-#djangorestframework-digestauth
 django-recaptcha
 celery>=3.1.20
 django-otp>=0.3.4
 jsonfield>=1.0
 django-countries>=3.4.1
-
-pbr
-
 
 pyopenssl
 ndg-httpsclient>=0.4
@@ -44,15 +36,8 @@ django-scrypt>=0.2.3
 django-redis
 
 
-#webtest
 markdown
-#django-rest-swagger
-#coverage
-#pytest>=2.7
-#pytest-pythonpath
-#pytest-cache
 django-debug-toolbar>=1.3
-#pytest-django
 
 django_admin_bootstrapped>=2.4.0
 django<1.9,>=1.8
