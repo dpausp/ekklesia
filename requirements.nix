@@ -17,7 +17,7 @@ let
     pkgs = pythonPackages;
   };
 
-  generated = import ./django1.8_generated.nix { inherit pkgs python; };
-  overrides = import ./django1.8_override.nix { inherit pkgs python; };
+  generated = import ./requirements_generated.nix { inherit pkgs python; };
+  overrides = import ./requirements_override.nix { inherit pkgs python; };
 
 in fix' (extends overrides generated)
