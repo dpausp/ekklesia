@@ -30,10 +30,11 @@ self: super: rec {
   kryptomime = python.mkDerivation {
     propagatedBuildInputs = [ pythonPackages.subprocess32 self.gnupg self.six ];
     name = "kryptomime-0.5.0";
-    src = pkgs.fetchgit {
-      url = "https://github.com/ttanner/kryptomime";
+    src = pkgs.fetchFromGitHub {
+      owner = "ttanner";
+      repo = "kryptomime";
       rev = "bcb49cc492f3088b0a4476da127a46aa6668ac32";
-      sha256 = "16mpkjcp38lifl1b3cpyp91ch33nzhhd1wk72ikw89plwq096v3w";
+      sha256 = "1kx85sdmm0300wmcxhjhgfvxz3qhwmlkwf8q0lgbvyjzzqa3fnvh";
     };
     doCheck = false;
   };
