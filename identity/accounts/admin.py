@@ -323,5 +323,5 @@ class EMailConfirmationAdmin(admin.ModelAdmin):
         site = get_current_site(request)
         for confirmation in queryset:
             if not confirmation.confirmation_key_expired():
-                profile.send_confirmation_email(domain=site.domain, use_https=self.request.is_secure())
+                confirmation.send_confirmation_email(domain=site.domain, use_https=request.is_secure())
     resend_confirmation_email.short_description = _("Re-send confirmation emails")
