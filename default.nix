@@ -23,7 +23,6 @@ let
     propagatedBuildInputs = with python.packages; nixpkgs_deps
     ++ [
       amqp
-      anyjson
       billiard
       django-braces
       Django

@@ -27,6 +27,17 @@ self: super: rec {
     buildInputs = with super; [pkgs.libffi];
   });
 
+  django-braces = super.cryptography.override (attrs: {
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/e4/8c/6244960c86a894cbad8a29433a37f527dc3016f845fe41e34deb2e686ca8/django-braces-1.10.0.tar.gz";
+      sha256 = "1ixab5r359rbggbfn8lgrj3l8hkhsr899m6kghxc0rg667q8lh1g";
+    };
+  });
+
+  lockfile = python.overrideDerivation super."lockfile" (old: {
+    buildInputs = old.buildInputs ++ [ self."pbr" ];
+  });
+
   kryptomime = python.mkDerivation {
     propagatedBuildInputs = [ pythonPackages.subprocess32 self.gnupg self.six ];
     name = "kryptomime-0.5.0";
