@@ -49,4 +49,15 @@ self: super: rec {
     };
     doCheck = false;
   };
+
+  "logging-tree" = python.mkDerivation {
+    name = "logging-tree-1.7";
+    src = pkgs.fetchurl { url = "https://pypi.python.org/packages/31/64/d014398666f51237f8213c4b55f0c025a61ffaba72cfa567e4d761ecb8da/logging_tree-1.7.tar.gz"; sha256 = "3df68a170f30386e58bbea330d27c6a6ce88681919b35080deac8ec69458973e"; };
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.bsdOriginal;
+      description = "Introspect and display the logger tree inside \"logging\"";
+    };
+  };
 }

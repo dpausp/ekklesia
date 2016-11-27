@@ -16,7 +16,8 @@ let
   python = import ./requirements.nix { inherit pkgs; };
 
   gnupg1 = pkgs.gnupg1orig;
-  nixpkgs_deps = [pkgs.sassc gnupg1 ] ++ lib.optional lib.inNixShell [ pythonPackages.ipdb pythonPackages.ipython ];
+  #nixpkgs_deps = [pkgs.sassc gnupg1 ] ++ lib.optional lib.inNixShell [ pythonPackages.ipdb pythonPackages.ipython ];
+  nixpkgs_deps = [pkgs.sassc gnupg1 ] ++ [ pythonPackages.ipdb pythonPackages.ipython ];
 
 
   ekklesia = python.mkDerivation rec {
@@ -47,6 +48,7 @@ let
       jsonfield
       kombu
       kryptomime
+      logging-tree
       ndg-httpsclient
       pythonPackages.pillow
       psutil
