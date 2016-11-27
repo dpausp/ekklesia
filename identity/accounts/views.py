@@ -17,6 +17,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # For more details see the file COPYING.
+import logging
 
 from django.conf import settings
 from django.http import HttpResponseRedirect
@@ -41,6 +42,10 @@ import accounts.models as models
 import accounts.forms as forms
 from accounts.models import Account
 from django.contrib.auth.signals import user_logged_in
+
+
+logg = logging.getLogger(__name__)
+
 
 def template_location(*args):
     import os
@@ -507,6 +512,7 @@ A confirmation link has been sent to the email address you supplied."""))
         return super(RegistrationView, self).dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
+        logg.debug("registration form is valid")
         new_user = self.register(**form.cleaned_data)
         args = dict(title=self.success[0],message=self.success[1])
         return render(self.request, message_template, args)
@@ -517,15 +523,21 @@ A confirmation link has been sent to the email address you supplied."""))
         from django.contrib.sites.shortcuts import get_current_site
         site = get_current_site(self.request)
         username, email, password = cleaned_data['username'], cleaned_data['email'], cleaned_data['password']
+        logg.debug("trying to register account %s (%s)", username, email)
         with transaction.atomic():
             new_user = self.user_class.objects.create_user(username, None, password,
                 status=Account.DELETED, last_login=timezone.now())
             new_user.email = None
             new_user.is_active = False
             new_user.save(update_fields=['is_active'])
-            confirmation = models.EMailConfirmation.objects.create_confirmation(new_user, email)
+
+        logg.debug("created user account for email %s", email)
+        confirmation = models.EMailConfirmation.objects.create_confirmation(new_user, email)
+
         if send_email:
             confirmation.send_confirmation_email(domain=site.domain, use_https=self.request.is_secure())
+            logg.debug("sent confirmation email")
+
         return new_user
 
     def registration_allowed(self):
@@ -547,8 +559,10 @@ class MemberRegistrationView(RegistrationView):
     def register(self, **kwargs):
         from datetime import datetime
         from accounts.models import Invitation
+        invitation_code = kwargs['invitation_code']
+        logg.debug("user trying to register with invitation code %s", invitation_code)
         invitation = get_object_or_404(models.Invitation,
-            code=kwargs['invitation_code'],status=Invitation.NEW)
+            code=invitation_code,status=Invitation.NEW)
         new_user = super(MemberRegistrationView,self).register(**kwargs)
         require_activate = getattr(settings, 'TWO_FACTOR_SIGNUP', False)
         if require_activate:
@@ -558,6 +572,7 @@ class MemberRegistrationView(RegistrationView):
         new_user.uuid = invitation.uuid
         new_user.status = models.Account.NEWMEMBER
         new_user.save()
+        logg.debug("created user with uuid %s", new_user.uuid)
         return new_user
 
 class GuestRegistrationView(RegistrationView):

@@ -18,12 +18,17 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # For more details see the file COPYING.
 
+import logging
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import AnonymousUser
 
 from rest_framework import exceptions
 from rest_framework.authentication import BasicAuthentication
+
+
+logg = logging.getLogger(__name__)
+
 
 def authenticate_sslcert(request, certs):
     if not request.is_secure():
@@ -56,7 +61,11 @@ class SSLBasicAuthentication(BasicAuthentication):
         no_check = getattr(settings,'SSL_CLIENT_AUTH_DEBUG', False)
         certs = getattr(settings, 'SSL_CERTS', None)
         if not no_check and certs:
-            cert = authenticate_sslcert(request,certs)
+            try:
+                cert = authenticate_sslcert(request,certs)
+            except exceptions.AuthenticationFailed:
+                logg.exception("SSL authentication failed!")
+                raise
             found = False
             for login in logins[self.www_authenticate_realm]:
                 if cert!=login[0]: continue

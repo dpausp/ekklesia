@@ -18,6 +18,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # For more details see the file COPYING.
 
+import logging
 from django.http import Http404, HttpResponse
 from django.shortcuts import get_object_or_404
 from django.core.urlresolvers import reverse
@@ -33,6 +34,10 @@ from rest_framework import status, permissions
 from rest_framework.parsers import JSONParser, FormParser, MultiPartParser
 from rest_framework import exceptions
 from idapi.authentication import SSLBasicAuthentication
+
+
+logg = logging.getLogger(__name__)
+
 
 class MembersLogin(SSLBasicAuthentication):
     www_authenticate_realm = 'members'
@@ -174,15 +179,21 @@ def update_members(members,departments,crypto=True):
     reg_uuids, fail_uuids = [], []
     for member in data:
         uuid = member['uuid']
+        logg.debug("processing member uuid %s", uuid)
         try: obj = Account.objects.get(uuid=uuid)
-        except: continue # Account.DoesNotExist
+        except Account.DoesNotExist: 
+            logg.warn("account for uuid %s does not exist", uuid)
         try: 
             if obj.email_unconfirmed: continue # ignore unconfirmed email
         except AttributeError: pass
         if obj.status==Account.NEWMEMBER:
             try: inv = Invitation.objects.get(uuid=uuid)
             except Invitation.DoesNotExist: inv = None
-            assert inv and inv.status==Invitation.REGISTERING, "invalid state for newmember"
+            if not inv:
+                raise ValueError("invitation object not found for uuid %s" % uuid)
+            if inv.status != Invitation.REGISTERING:
+                raise ValueError("invalid state for newmember: status REGISTERING expected, %s found" % inv.status)
+
             if member['status'] == Account.DELETED:
                 obj.delete()
                 inv.delete()
