@@ -18,6 +18,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # For more details see the file COPYING.
 
+import logging
 import re
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
@@ -35,9 +36,17 @@ from treebeard.mp_tree import MP_Node
 from django_countries.fields import CountryField
 #from phonenumber_field.modelfields import PhoneNumberField
 
+
+logg = logging.getLogger(__name__)
+
+
 def send_broker_msg(msg, exchange, queue=None, connection=None):
-    if not settings.BROKER_URL: return
+    logg.debug("send_broker_msg exchange %s, queue %s, msg %s connection %s", exchange, queue, msg, connection)
+    if not settings.BROKER_URL: 
+        logg.debug("no broker URL defined")
+        return
     if isinstance(connection,dict): # debug
+        logg.debug("send_broker_msg debug")
         msgs = connection.get(exchange)
         if msgs is None:
             connection[exchange] = [msg]
@@ -48,15 +57,22 @@ def send_broker_msg(msg, exchange, queue=None, connection=None):
     if not queue: queue = exchange # same name
     queue = Queue(queue, exchange=exchange)
     if connection:
+        logg.debug("sending broker msg directly with given connection %s", connection)
         connection.Producer(serializer='json').publish(msg, exchange=exchange, declare=[queue])
         return
     if settings.USE_CELERY:
         import celery
         conn_context = celery.current_app.pool.acquire(timeout=1)
+        logg.debug("sending broker msg via celery")
     else:
         conn_context = Connection(settings.BROKER_URL,ssl=settings.BROKER_USE_SSL)
+        logg.debug("sending broker msg directly")
+
     with conn_context as conn:
         conn.Producer(serializer='json').publish(msg, exchange=exchange, declare=[queue])
+
+    logg.debug("sent broker msg")
+
 
 def notify_registration(status,uuid,connection=None):
     msg = dict(format='member',version=(1,0),status=status,uuid=uuid)
@@ -253,6 +269,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
     def email_confirmed(self, email):
         self.email = email
         #user.is_active = True
+        logg.debug("user confirmed email %s, status %s", email, self.status)
         if self.status == self.NEWMEMBER:
             notify_registration(status='registering',uuid=self.uuid)
         self.save(update_fields=('email',))
