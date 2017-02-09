@@ -53,8 +53,8 @@ def send_broker_msg(msg, exchange, queue=None, connection=None):
         else: msgs.append(msg)
         return
     from kombu import Connection, Exchange, Queue, Producer
-    exchange = Exchange(exchange, 'fanout')
     if not queue: queue = exchange # same name
+    exchange = Exchange(exchange, 'fanout')
     queue = Queue(queue, exchange=exchange)
     if connection:
         logg.debug("sending broker msg directly with given connection %s", connection)
