@@ -23,7 +23,8 @@ from django import forms
 from django.utils.translation import ugettext as _
 
 import django.contrib.auth.forms as auth
-from accounts.models import Account, Guest, Verification, EMailConfirmation
+from accounts.models import Account, Guest, Verification, EMailConfirmation,\
+    Invitation
 from accounts.fields import InvitationCodeField
 from captcha.fields import ReCaptchaField
 from django_countries.fields import CountryField
@@ -393,7 +394,7 @@ class RegistrationForm(forms.Form):
 
 class MemberRegistrationForm(RegistrationForm):
 
-    invitation_code = InvitationCodeField(required=True, label=_(u"Invitation code"))
+    invitation_code = forms.CharField(required=True, label=_(u"Invitation code"))
 
     secret = forms.CharField(widget=forms.PasswordInput,required=True,
                                 label=_("Activation secret"))
@@ -409,6 +410,13 @@ class MemberRegistrationForm(RegistrationForm):
             self.fields['invitation_code'].widget = HiddenInput()
         if not getattr(settings, 'TWO_FACTOR_SIGNUP', False):
             del self.fields['secret']
+            
+    def clean(self):
+        try:
+            invitation_code = Invitation.objects.get(code=self.cleaned_data["invitation_code"],status=Invitation.NEW)
+        except Invitation.DoesNotExist:
+            raise forms.ValidationError(_("Invalid invitation code."))
+        return RegistrationForm.clean(self)
 
 guest_req = settings.GUEST_MANDATORY_FIELDS
 
