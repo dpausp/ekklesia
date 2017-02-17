@@ -42,7 +42,9 @@ logg = logging.getLogger(__name__)
 
 def send_broker_msg(msg, exchange, queue=None, connection=None):
     logg.debug("send_broker_msg exchange %s, queue %s, msg %s connection %s", exchange, queue, msg, connection)
-    if not settings.BROKER_URL: 
+    if settings.BROKER_URL: 
+        logg.debug("broker url to use %s", settings.BROKER_URL)
+    else:
         logg.debug("no broker URL defined")
         return
     if isinstance(connection,dict): # debug
