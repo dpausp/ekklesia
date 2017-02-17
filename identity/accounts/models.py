@@ -76,7 +76,11 @@ def send_broker_msg(msg, exchange, queue=None, connection=None):
 
 def notify_registration(status,uuid,connection=None):
     msg = dict(format='member',version=(1,0),status=status,uuid=uuid)
-    send_broker_msg(msg, settings.REGISTER_EXCHANGE, connection=connection)
+    try:
+        send_broker_msg(msg, settings.REGISTER_EXCHANGE, connection=connection)
+    except:
+        logg.exception("exception occured while sending a broker message, ignored")
+
 
 #-------------------------------------------------------------------------------------
 
