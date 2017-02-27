@@ -102,6 +102,9 @@ let
       echo $PYTHONPATH
       echo $PATH
     '';
+    shellHook = ''
+      export PATH=$PATH:${gnupg1}/bin/
+    '';
   };
 
 in ekklesia
