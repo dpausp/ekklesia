@@ -2,49 +2,50 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-26 14:28+0200\n"
+"POT-Creation-Date: 2016-08-26 15:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Last-Translator: Moira Brülisauer <moosline@savvy.ch>, 2016\n"
+"Language-Team: French (https://www.transifex.com/ekklesia-1/teams/50274/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: PACKAGE VERSION\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: accounts/templates/accounts/authorize.jade:3
 msgid "Authorize"
-msgstr "Autorisiere"
+msgstr "Autoriser"
 
 #: accounts/templates/accounts/authorize.jade:8
 msgid "Please correct the error below."
-msgstr "Bitte korrigiere den unten angezeigten Fehler."
+msgstr "S.v.pl. corrigez l'eurreur ci-dessous."
 
 #: accounts/templates/accounts/authorize.jade:8
 msgid "Please correct the errors below."
-msgstr "Bitte korrigiere die unten angezeigten Fehler."
+msgstr "S.v.pl. corrigez les eurreurs ci-dessous."
 
 #: accounts/templates/accounts/authorize.jade:11
 msgid "Application requires following permissions:"
-msgstr "Die Anwendung benötigt die folgenden Rechte:"
+msgstr "L'application nécessite les autorisations suivantes:"
 
 #: accounts/templates/accounts/authorize.jade:25
 msgid "Forgotten your password or username?"
-msgstr "Passwort oder Benutzername vergessen?"
+msgstr "Avez-vous oublié votre mot de passe ou nom d'utilisateur?"
 
 #: accounts/templates/accounts/index.jade:2
 #, python-format
 msgid "Hello %(name)s!"
-msgstr "Hallo %(name)s!"
+msgstr "Bonjour %(name)s !"
 
 #: accounts/templates/accounts/index.jade:7
 msgid "Actions"
-msgstr "Aktionen"
+msgstr "Actes"
 
 #: accounts/templates/accounts/index.jade:10
 msgid "Administration"
@@ -52,31 +53,31 @@ msgstr "Administration"
 
 #: accounts/templates/accounts/index.jade:12
 msgid "Change Username"
-msgstr "Benuzername Ändern"
+msgstr "Changer le nom d'utilisateur"
 
 #: accounts/templates/accounts/index.jade:14
 msgid "Change Email"
-msgstr "Email Ändern"
+msgstr "Changer l'adresse email"
 
 #: accounts/templates/accounts/index.jade:16
 msgid "Change Password"
-msgstr "Passwort Ändern"
+msgstr "Changer le mot de passe"
 
 #: accounts/templates/accounts/index.jade:18
 msgid "Show Profile"
-msgstr "Profil Anzeigen"
+msgstr "Afficher le profil"
 
 #: accounts/templates/accounts/index.jade:20
 msgid "Edit Profile"
-msgstr "Profil Bearbeiten"
+msgstr "Editer le profil"
 
 #: accounts/templates/accounts/index.jade:24
 msgid "User info"
-msgstr "Benutzerinfo"
+msgstr "Information d'utilisateur"
 
 #: accounts/templates/accounts/index.jade:27
 msgid "Username"
-msgstr "Benutzername"
+msgstr "Nom d'utilisateur"
 
 #: accounts/templates/accounts/index.jade:30
 msgid "Status"
@@ -84,66 +85,66 @@ msgstr "Status"
 
 #: accounts/templates/accounts/index.jade:33
 msgid "Verified"
-msgstr "Verifiziert"
+msgstr "Vérifié"
 
 #: accounts/templates/accounts/index.jade:36
 msgid "Eligible"
-msgstr "Stimmberechtigt"
+msgstr "Éligible"
 
 #: accounts/templates/accounts/index.jade:39
 msgid "Public key registered"
-msgstr "Öffentlichen Schlüssel (Public key) registriert?"
+msgstr "Clé publique enregistrée"
 
 #: accounts/templates/accounts/index.jade:42
 msgid "Two-factor authentication (2FA)"
-msgstr "Zwei-Faktor-Authentifizierung (2FA)"
+msgstr "Authentification à deux facteurs (2FA)"
 
 #: accounts/templates/accounts/index.jade:45
 msgid "Notify on login"
-msgstr "Benachrichtigung beim Login"
+msgstr "Notifier à la connexion"
 
 #: accounts/templates/accounts/profile.jade:2
 msgid "Edit profile"
-msgstr "Profil bearbeiten"
+msgstr "Editer le profil"
 
 #: accounts/templates/accounts/profile.jade:8
 msgid "Public identification (verified)"
-msgstr "Öffentliche Identifizierung (verifiziert)"
+msgstr "Identification publique (vérifié)"
 
 #: accounts/templates/accounts/profile.jade:11
 msgid "Public identification (unverified)"
-msgstr "Öffentliche Identifizerung (nicht verifiziert)"
+msgstr "Identification publique (non vérifiée) "
 
 #: accounts/templates/accounts/profile.jade:14
 msgid "Public profile (verified)"
-msgstr "Öffentliches Profil (verifiziert)"
+msgstr "Profil publique (vérifié)"
 
 #: accounts/templates/accounts/profile.jade:17
 msgid "Public profile (unverified)"
-msgstr "Öffentliches Profil (verifiziert)"
+msgstr "Profil publique (non vérifié)"
 
 #: accounts/templates/accounts/profile_edit.jade:1
 #: accounts/templates/accounts/profile_edit.jade:3
+#, python-format
 msgid "Profile of %(name)s"
-msgstr "Profil von %(name)s"
+msgstr "Profil de %(name)s !"
 
 #: accounts/templates/registration/logged_out.jade:1
 msgid "Logged out"
-msgstr "Abgemeldet"
+msgstr "Déconnecté"
 
 #: accounts/templates/registration/logged_out.jade:3
 msgid "log in"
-msgstr "Anmelden"
+msgstr "Connecté"
 
 #: accounts/templates/registration/registration_form.jade:1
 msgid "Register"
-msgstr "Registrieren"
+msgstr "S'inscrire"
 
 #: accounts/templates/registration/registration_form.jade:2
 msgid "Create an account"
-msgstr "Ein Benutzerkonto anlegen"
+msgstr "Créer un compte"
 
 #: identity/templates/base.jade:5
 msgid "log out"
-msgstr "Abmelden"
-
+msgstr "déconnecter"
