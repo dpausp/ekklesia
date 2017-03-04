@@ -64,6 +64,7 @@ let
 
     buildInputs = with python.packages; [
       libsass
+      pkgs.gettext
       pyjade
     ];
 
@@ -81,6 +82,7 @@ let
       echo $PYTHONPATH
       make html
       python manage.py collectstatic --noinput
+      python manage.py compilemessages
       popd
       export PYTHONPATH=$OLD_PP
     '';
