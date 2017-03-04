@@ -17,7 +17,6 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # For more details see the file COPYING.
-import logging
 
 from django.conf import settings
 from django.http import HttpResponseRedirect
@@ -42,11 +41,6 @@ import accounts.models as models
 import accounts.forms as forms
 from accounts.models import Account
 from django.contrib.auth.signals import user_logged_in
-
-
-logg = logging.getLogger(__name__)
-logg.debug("test")
-
 
 def template_location(*args):
     import os
@@ -401,8 +395,8 @@ def password_reset_confirm(request, uidb64=None, token=None,
                                 current_app=current_app)
     context = {
         'title': _('Password reset unsuccessful'),
-        'message': """The password reset link was invalid, possibly because it has already been used.
-Please request a new password reset.""",
+        'message': _("""The password reset link was invalid, possibly because it has already been used.
+Please request a new password reset."""),
     }
     if extra_context is not None: context.update(extra_context)
     return TemplateResponse(request, message_template, context,
@@ -500,20 +494,19 @@ class RegistrationView(FormView):
     disallowed_url = getattr(settings, 'REGISTRATION_CLOSED_URL','/')
     form_class = forms.RegistrationForm
     http_method_names = ['get', 'post', 'head', 'options', 'trace']
-    success = ('Registration complete',"""
+    success = (_('Registration complete'),_("""
 Please complete your registration by confirming your email.
-A confirmation link has been sent to the email address you supplied.""")
+A confirmation link has been sent to the email address you supplied."""))
     template_name = 'registration/registration_form.html'
 
     def dispatch(self, request, *args, **kwargs):
         if not self.registration_allowed():
             return render(self.request, message_template,
-                dict(title='Registration closed',message='Registration is currently closed.'))
+                dict(title=_('Registration closed'),message=_('Registration is currently closed.')))
         logout(request) # make sure user is logged out
         return super(RegistrationView, self).dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
-        logg.debug("registration form is valid")
         new_user = self.register(**form.cleaned_data)
         args = dict(title=self.success[0],message=self.success[1])
         return render(self.request, message_template, args)
@@ -524,21 +517,15 @@ A confirmation link has been sent to the email address you supplied.""")
         from django.contrib.sites.shortcuts import get_current_site
         site = get_current_site(self.request)
         username, email, password = cleaned_data['username'], cleaned_data['email'], cleaned_data['password']
-        logg.debug("trying to register account %s (%s)", username, email)
         with transaction.atomic():
             new_user = self.user_class.objects.create_user(username, None, password,
                 status=Account.DELETED, last_login=timezone.now())
             new_user.email = None
             new_user.is_active = False
             new_user.save(update_fields=['is_active'])
-
-        logg.debug("created user account for email %s", email)
-        confirmation = models.EMailConfirmation.objects.create_confirmation(new_user, email)
-
+            confirmation = models.EMailConfirmation.objects.create_confirmation(new_user, email)
         if send_email:
             confirmation.send_confirmation_email(domain=site.domain, use_https=self.request.is_secure())
-            logg.debug("sent confirmation email")
-
         return new_user
 
     def registration_allowed(self):
@@ -560,10 +547,8 @@ class MemberRegistrationView(RegistrationView):
     def register(self, **kwargs):
         from datetime import datetime
         from accounts.models import Invitation
-        invitation_code = kwargs['invitation_code']
-        logg.debug("user trying to register with invitation code %s", invitation_code)
         invitation = get_object_or_404(models.Invitation,
-            code=invitation_code,status=Invitation.NEW)
+            code=kwargs['invitation_code'],status=Invitation.NEW)
         new_user = super(MemberRegistrationView,self).register(**kwargs)
         require_activate = getattr(settings, 'TWO_FACTOR_SIGNUP', False)
         if require_activate:
@@ -573,7 +558,6 @@ class MemberRegistrationView(RegistrationView):
         new_user.uuid = invitation.uuid
         new_user.status = models.Account.NEWMEMBER
         new_user.save()
-        logg.debug("created user with uuid %s", new_user.uuid)
         return new_user
 
 class GuestRegistrationView(RegistrationView):
@@ -598,16 +582,16 @@ class EMailConfirmationView(TemplateView):
         context = super(EMailConfirmationView, self).get_context_data(**kwargs)
         confirmed_user = self.confirm(**kwargs)
         if confirmed_user:
-            context['title'] = "Email confirmed"
-            context['message'] = '''Your email %s has been successfully confirmed.
-Your account will be activated shorlty, after which you may login.''' % confirmed_user.email
+            context['title'] = _("Email confirmed")
+            context['message'] = _('''Your email %s has been successfully confirmed.
+Your account will be activated shorlty, after which you may login.''') % confirmed_user.email
             #print type(confirmed_user), confirmed_user.is_active
         else:
-            context['title'] = "E-Mail confirmation failed"
-            context['message'] = """
+            context['title'] = _("E-Mail confirmation failed")
+            context['message'] = _("""
 Sorry, it didn't work. Either your confirmation link was incorrect, or
 the confirmation key for your account has expired; confirmation keys are
-only valid for %s days.""" % humanize.apnumber(settings.EMAIL_CONFIRMATION_DAYS)
+only valid for %s days.""") % humanize.apnumber(settings.EMAIL_CONFIRMATION_DAYS)
         return context
 
     def confirm(self, confirmation_key):

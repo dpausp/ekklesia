@@ -62,7 +62,7 @@ class AuthenticationForm(auth.AuthenticationForm):
         self.helper.layout = Layout(
             'username','password',
             ButtonHolder(
-                Submit('submit', value='Log in'),
+                Submit('submit', value=_('Log in')),
             )
         )
 
@@ -86,9 +86,9 @@ class OptionalOTPAuthenticationForm(OTPAuthenticationForm):
             Conditional(lambda form,ctx: form.get_user(),'otp_device'),
                 'otp_token',
             ButtonHolder(
-                Submit('submit', value='Log in'),
+                Submit('submit', value=_('Log in')),
                 Conditional(lambda form,ctx: form.get_user(),
-                    Submit('otp_challenge', 'Get challenge')
+                    Submit('otp_challenge', _('Get challenge code'))
                 ),
             )
         )
@@ -129,7 +129,7 @@ class PasswordResetForm(auth.PasswordResetForm):
         self.helper.layout = Layout(
             'email',
             ButtonHolder(
-                Submit('submit', value='Reset my password'),
+                Submit('submit', value=_('Reset my password')),
             )
         )
 
@@ -143,7 +143,7 @@ class SetPasswordForm(auth.SetPasswordForm):
         self.helper.layout = Layout(
             'username', 'new_password1', 'new_password2',
             ButtonHolder(
-                Submit('submit', value='Set my password'),
+                Submit('submit', value=_('Set my password')),
             )
         )
 
@@ -157,7 +157,7 @@ class PasswordChangeForm(auth.PasswordChangeForm):
         self.helper.layout = Layout(
             'old_password', 'new_password1', 'new_password2',
             ButtonHolder(
-                Submit('submit', value='Change my password'),
+                Submit('submit', value=_('Change my password')),
             )
         )
 
@@ -187,7 +187,7 @@ class UsernameChangeForm(forms.Form):
         self.helper.layout = Layout(
             'username', 'password',
             ButtonHolder(
-                Submit('submit', value='Change my username'),
+                Submit('submit', value=_('Change my username')),
             )
         )
 
@@ -242,7 +242,7 @@ class EMailChangeForm(forms.Form):
         self.helper.layout = Layout(
             'email', 'email2', 'password',
             ButtonHolder(
-                Submit('submit', value='Change my email'),
+                Submit('submit', value=_('Change my email')),
             )
         )
 
@@ -299,7 +299,7 @@ class EditProfileForm(forms.ModelForm):
         self.helper.layout = Layout(
             'avatar', 'verified_public_id', 'public_id', 'verified_profile', 'profile',
             ButtonHolder(
-                Submit('submit', value='Change my profile'),
+                Submit('submit', value=_('Change my profile')),
             )
         )
 
