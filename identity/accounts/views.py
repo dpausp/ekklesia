@@ -522,7 +522,7 @@ A confirmation link has been sent to the email address you supplied."""))
                 status=Account.DELETED, last_login=timezone.now())
             new_user.email = None
             new_user.is_active = False
-            new_user.save(update_fields=['is_active'])
+            new_user.save(update_fields=['email', 'is_active'])
             confirmation = models.EMailConfirmation.objects.create_confirmation(new_user, email)
         if send_email:
             confirmation.send_confirmation_email(domain=site.domain, use_https=self.request.is_secure())
