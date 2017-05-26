@@ -1,0 +1,67 @@
+### from common.txt
+
+# all
+six>=1.9
+gnupg>=2.0.2
+#kryptomime>=0.5.0
+# custom # https://github.com/ttanner/kryptomime/archive/master.zip
+psutil>=1.2.1
+requests>=2.9.1
+
+# backends
+sqlalchemy>=1.0.2
+pytz
+configobj>=5.0, >=5.0.5
+# custom # python-daemon>=2.1
+kombu>=3.0.33
+unicodecsv
+
+# django
+# custom # django>=1.8
+libsass
+django-treebeard>=3.0
+django-extensions>=1.6.1
+# custom # django-configurations>=1.0
+# use nixpkgs # Pillow>=3.1
+pyjade>=3.0
+# custom # https://github.com/lamby/django-agpl/archive/master.zip
+django-cors-headers
+django-crispy-forms
+django-oauth-toolkit>=0.10
+djangorestframework>=3.3.2
+#djangorestframework-digestauth
+django-recaptcha
+django_admin_bootstrapped>=2.4
+celery>=3.1.20
+django-otp>=0.3.4
+jsonfield>=1.0
+django-countries>=3.4.1
+
+
+### from live.txt
+
+pyopenssl
+ndg-httpsclient>=0.4
+pyasn1>=0.1.9
+py-bcrypt
+scrypt>=0.7.1
+alembic>=0.8.4
+psycopg2>=2.6.1
+# not needed with nix # uwsgi>=2.0.12
+# replaced by redis # pylibmc
+django-scrypt>=0.2.3
+
+
+### custom
+
+django<1.9,>=1.8 # we really want 1.8.x
+redis # use redis instead of mc
+
+pytest-django # github version from django1.8.txt does not work with pypi2nix
+
+
+# added egg-names for github links
+
+https://github.com/lamby/django-agpl/archive/master.zip#egg=django-agpl
+https://github.com/jezdez/django-configurations/archive/master.zip#egg=django-configurations
+https://github.com/django-mptt/django-mptt/archive/master.zip#egg=django-mptt
