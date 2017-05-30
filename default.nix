@@ -69,6 +69,6 @@ let
       export PATH=$PATH:${gnupg1}/bin/
     '';
 
-    passthru.interpreter = python.interpreter;
+    passthru.python = python.interpreter.interpreter;
   };
 in ekklesia
