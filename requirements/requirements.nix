@@ -351,7 +351,7 @@ let
 
     "django-configurations" = python.mkDerivation {
       name = "django-configurations-2.0";
-      src = pkgs.fetchurl { url = "https://github.com/jezdez/django-configurations/archive/master.zip"; sha256 = "8778871e9ebd668ed3664b55012a07b3fe5b13a6b5758bcdd648dd5480ce7bd5"; };
+      src = pkgs.fetchurl { url = "https://github.com/jezdez/django-configurations/archive/master.zip"; sha256 = "0blmv5sd2wp6g3x1ccb8cakyb1nilgxzapcz8sanvihjxfrrnv3g"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
@@ -428,7 +428,7 @@ let
 
     "django-mptt" = python.mkDerivation {
       name = "django-mptt-0.8.7";
-      src = pkgs.fetchurl { url = "https://github.com/django-mptt/django-mptt/archive/master.zip"; sha256 = "5c416b675a7e778c87aada6946cc4e0ff83b2a765cd00329b749062ab8d118f4"; };
+      src = pkgs.fetchurl { url = "https://github.com/django-mptt/django-mptt/archive/master.zip"; sha256 = "170v5c4v64kq3cf0xa4bs0a5q80spmxnrwdyxk67xr2318vkvr9x"; };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs;
       propagatedBuildInputs = [ ];
