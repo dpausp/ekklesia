@@ -9,14 +9,6 @@ self: super: {
     patchPhase = "echo > README.rst";
   });
 
-  "pytest" = super.pytest.override (old: {
-     buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
-  });
-
-  "pytest-django" = super.pytest-django.override (old: {
-     buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
-  });
-
   kryptomime = python.mkDerivation {
     propagatedBuildInputs = [ self.gnupg self.six ];
     name = "kryptomime-0.5.0";
