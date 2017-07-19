@@ -14,7 +14,10 @@ let
 
   python = import ./requirements/requirements.nix { inherit pkgs; };
   gnupg1 = pkgs.gnupg1orig;
-  deps = builtins.attrValues python.packages ++ [ gnupg1 python36Packages.pillow ] ++ lib.optional lib.inNixShell [ ];
+  deps = python.packages // {
+    inherit gnupg1;
+    pillow = python36Packages.pillow;
+  };
 
 
   ekklesia = python.mkDerivation rec {
@@ -23,7 +26,7 @@ let
     name = "${pname}-${version}";
     inherit src;
 
-    propagatedBuildInputs = deps;
+    propagatedBuildInputs = builtins.attrValues deps;
     doCheck = false;
 
     buildInputs = with python.packages; [
@@ -69,6 +72,10 @@ let
       export PATH=$PATH:${gnupg1}/bin/
     '';
 
-    passthru.python = python.interpreter.interpreter;
+    
+    passthru = {
+      python = python.interpreter.interpreter;
+      inherit deps;
+    };
   };
 in ekklesia
