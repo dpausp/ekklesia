@@ -37,10 +37,10 @@ setup(
     ],
     entry_points = {
         'console_scripts': [
-            'members = ekklesia.backends.members:main_func',
-            'invitations = ekklesia.backends.invitations:main_func',
-            'joint = ekklesia.backends.joint:main_func',
-            'ekklesia-manage.py = manage:main_func',
+            'ekklesia-members = ekklesia.backends.members:main_func',
+            'ekklesia-invitations = ekklesia.backends.invitations:main_func',
+            'ekklesia-joint = ekklesia.backends.joint:main_func',
+            'ekklesia-manage = manage:main_func',
         ],
     }
 
