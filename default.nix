@@ -19,7 +19,7 @@ let
 
   ekklesia = python.mkDerivation rec {
     pname = "ekklesia";
-    version = "0.0.1";
+    version = "0.1";
     name = "${pname}-${version}";
     inherit src;
 
