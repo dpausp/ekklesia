@@ -1,6 +1,6 @@
 { pkgs ? import ./requirements/nixpkgs.nix }:
 let
-  inherit (pkgs) lib pythonPackages;
+  inherit (pkgs) lib python36Packages;
   
   basename = path: with pkgs.lib; with builtins; last (splitString "/" path);
   src-filter = path: type: with pkgs.lib;
@@ -14,7 +14,7 @@ let
 
   python = import ./requirements/requirements.nix { inherit pkgs; };
   gnupg1 = pkgs.gnupg1orig;
-  deps = builtins.attrValues python.packages ++ [ gnupg1 ] ++ lib.optional lib.inNixShell [ pythonPackages.ipdb pythonPackages.ipython ];
+  deps = builtins.attrValues python.packages ++ [ gnupg1 python36Packages.pillow ] ++ lib.optional lib.inNixShell [ ];
 
 
   ekklesia = python.mkDerivation rec {
