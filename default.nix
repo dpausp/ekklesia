@@ -17,6 +17,7 @@ let
   deps = python.packages // {
     inherit gnupg1;
     pillow = python36Packages.pillow;
+    setuptools = python36Packages.setuptools;
   };
 
 
