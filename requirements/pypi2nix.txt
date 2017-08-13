@@ -61,7 +61,7 @@ django-debug-toolbar>=1.3
 ### custom
 
 django<1.9,>=1.8 # we really want 1.8.x
-redis # use redis instead of mc
+django-redis # use redis instead of mc
 django-extensions>=1.6.1,<1.8 # 1.8 removed UUIDField
 
 pytest-django # github version from django1.8.txt does not work with pypi2nix

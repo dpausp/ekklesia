@@ -572,6 +572,21 @@ let
     };
 
 
+    "django-redis" = python.mkDerivation {
+      name = "django-redis-4.8.0";
+      src = pkgs.fetchurl { url = "https://pypi.python.org/packages/31/10/cfa4226e413334ef04b99224ac01e9d04596d04ac5096e9f54f428b86039/django-redis-4.8.0.tar.gz"; sha256 = "5229da5b07ccb8d3e3e9ee098c0b7c03e20eba48634bc456697dd73d62c68b19"; };
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs;
+      propagatedBuildInputs = [
+      self."redis"
+    ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/niwibe/django-redis";
+        license = licenses.bsdOriginal;
+        description = "Full featured redis cache backend for Django.";
+      };
+    };
+
 
     "django-rest-swagger" = python.mkDerivation {
       name = "django-rest-swagger-2.1.2";
